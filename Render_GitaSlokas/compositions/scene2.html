@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 2</title>
+  <style>
+    @font-face {
+      font-family: 'Noto Sans Devanagari';
+      src: url('assets/fonts/NotoSansDevanagari-Regular.ttf') format('truetype');
+      font-weight: 400 700;
+      font-style: normal;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+    .bg-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: center center;
+    }
+    .title-box {
+      position: absolute;
+      top: 160px;
+      left: 120px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sub-title {
+      font-size: 34px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 2px 10px #000, 0 4px 20px #000;
+    }
+    .main-title {
+      font-size: 80px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffd000;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.95)) drop-shadow(0 0 30px rgba(0,0,0,0.9));
+      text-shadow: 0 0 20px rgba(255, 208, 0, 0.9), 0 3px 6px #000;
+    }
+
+    /* Verse Card in Center */
+    .verse-card-container {
+      position: absolute;
+      top: 480px;
+      left: 100px;
+      right: 100px;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+    }
+    .verse-card {
+      width: 880px;
+      background: rgba(246, 238, 222, 0.94);
+      border: 3px solid #d4af37;
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), inset 0 0 40px rgba(180, 140, 80, 0.2);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+    .sanskrit-verse {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 44px;
+      line-height: 1.8;
+      color: #4a3622;
+      font-weight: 600;
+    }
+    .verse-word {
+      display: inline-block;
+    }
+    .verse-word.lit {
+      color: #b86200;
+      font-weight: 700;
+      text-shadow: 0 0 16px rgba(255, 160, 0, 0.6);
+    }
+    .verse-source {
+      margin-top: 35px;
+      font-size: 32px;
+      font-weight: 800;
+      color: #8c5d26;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-top: 2px solid rgba(140, 93, 38, 0.3);
+      padding-top: 20px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" class="clip" data-composition-id="scene2" data-width="1080" data-height="1920" data-start="0" data-duration="8.56">
+    <img id="bg" class="bg-img" src="assets/images/shot2.jpg" alt="Palm-leaf manuscript">
+
+    <div id="titleBox" class="title-box">
+      <div class="sub-title">BHAGAVAD GITA</div>
+      <div id="verseTitle" class="main-title">VERSE 6.17</div>
+    </div>
+
+    <!-- Real HTML Verse Card on Aged Paper -->
+    <div class="verse-card-container">
+      <div id="card" class="verse-card">
+        <div class="sanskrit-verse">
+          <span id="vw1" class="verse-word">युक्ताहार</span><span id="vw2" class="verse-word">विहारस्य</span> 
+          <span id="vw3" class="verse-word">युक्तचेष्टस्य</span> 
+          <span id="vw4" class="verse-word">कर्मसु</span> ।<br>
+          <span id="vw5" class="verse-word">युक्तस्वप्नावबोधस्य</span> 
+          <span id="vw6" class="verse-word">योगो</span> 
+          <span id="vw7" class="verse-word">भवति</span> 
+          <span id="vw8" class="verse-word">दुःखहा</span> ॥
+        </div>
+        <div class="verse-source">Bhagavad Gita 6.17</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene2"] = tl;
+
+    // Slow push-in
+    tl.fromTo("#bg", { scale: 1.0 }, { scale: 1.08, duration: 8.56, ease: "none" }, 0);
+
+    // Fade in title and verse card
+    tl.fromTo("#titleBox", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3 }, 0.1);
+    tl.fromTo("#card", { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 0.2);
+
+    // Sequential lighting of Sanskrit words timed to voiceover:
+    // "yoga ends sorrow" (t=2.19s to 3.59s)
+    tl.to(["#vw6", "#vw7", "#vw8"], { className: "verse-word lit", duration: 0.2 }, 2.19);
+
+    // "balanced in eating" (t=4.33s to 5.68s)
+    tl.to("#vw1", { className: "verse-word lit", duration: 0.2 }, 4.33);
+
+    // "recreation" (t=6.10s to 7.07s)
+    tl.to("#vw2", { className: "verse-word lit", duration: 0.2 }, 6.10);
+
+    // "effort" (t=7.07s to 7.70s)
+    tl.to(["#vw3", "#vw4"], { className: "verse-word lit", duration: 0.2 }, 7.07);
+
+    // "and sleep" (t=7.73s to 8.56s)
+    tl.to("#vw5", { className: "verse-word lit", duration: 0.2 }, 7.73);
+  </script>
+</body>
+</html>

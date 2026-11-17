@@ -1,0 +1,422 @@
+[
+  {
+    "text": "Your",
+    "start": 0.11,
+    "end": 0.36,
+    "id": "w0"
+  },
+  {
+    "text": "energy",
+    "start": 0.36,
+    "end": 0.9,
+    "id": "w1"
+  },
+  {
+    "text": "is",
+    "start": 0.9,
+    "end": 1.08,
+    "id": "w2"
+  },
+  {
+    "text": "leaking.",
+    "start": 1.08,
+    "end": 1.82,
+    "id": "w3"
+  },
+  {
+    "text": "And",
+    "start": 2.01,
+    "end": 2.06,
+    "id": "w4"
+  },
+  {
+    "text": "the",
+    "start": 2.06,
+    "end": 2.28,
+    "id": "w5"
+  },
+  {
+    "text": "Gita",
+    "start": 2.28,
+    "end": 2.57,
+    "id": "w6"
+  },
+  {
+    "text": "says,",
+    "start": 2.57,
+    "end": 3.04,
+    "id": "w7"
+  },
+  {
+    "text": "where?",
+    "start": 3.04,
+    "end": 3.6,
+    "id": "w8"
+  },
+  {
+    "text": "Verse",
+    "start": 3.87,
+    "end": 4.34,
+    "id": "w9"
+  },
+  {
+    "text": "6.17.",
+    "start": 4.34,
+    "end": 5.84,
+    "id": "w10"
+  },
+  {
+    "text": "Yoga",
+    "start": 5.95,
+    "end": 6.27,
+    "id": "w11"
+  },
+  {
+    "text": "ends",
+    "start": 6.27,
+    "end": 6.64,
+    "id": "w12"
+  },
+  {
+    "text": "sorrow",
+    "start": 6.72,
+    "end": 7.35,
+    "id": "w13"
+  },
+  {
+    "text": "for",
+    "start": 7.35,
+    "end": 7.46,
+    "id": "w14"
+  },
+  {
+    "text": "one",
+    "start": 7.56,
+    "end": 7.58,
+    "id": "w15"
+  },
+  {
+    "text": "who",
+    "start": 7.85,
+    "end": 7.96,
+    "id": "w16"
+  },
+  {
+    "text": "is",
+    "start": 7.96,
+    "end": 8.08,
+    "id": "w17"
+  },
+  {
+    "text": "balanced",
+    "start": 8.09,
+    "end": 8.48,
+    "id": "w18"
+  },
+  {
+    "text": "in",
+    "start": 8.64,
+    "end": 8.92,
+    "id": "w19"
+  },
+  {
+    "text": "eating,",
+    "start": 8.92,
+    "end": 9.44,
+    "id": "w20"
+  },
+  {
+    "text": "recreation,",
+    "start": 9.86,
+    "end": 10.83,
+    "id": "w21"
+  },
+  {
+    "text": "effort",
+    "start": 10.83,
+    "end": 11.36,
+    "id": "w22"
+  },
+  {
+    "text": "and",
+    "start": 11.49,
+    "end": 11.55,
+    "id": "w23"
+  },
+  {
+    "text": "sleep.",
+    "start": 11.87,
+    "end": 12.32,
+    "id": "w24"
+  },
+  {
+    "text": "Not",
+    "start": 12.42,
+    "end": 12.54,
+    "id": "w25"
+  },
+  {
+    "text": "extreme,",
+    "start": 12.67,
+    "end": 13.63,
+    "id": "w26"
+  },
+  {
+    "text": "balanced.",
+    "start": 13.63,
+    "end": 14.72,
+    "id": "w27"
+  },
+  {
+    "text": "No",
+    "start": 14.85,
+    "end": 14.92,
+    "id": "w28"
+  },
+  {
+    "text": "burnout,",
+    "start": 14.92,
+    "end": 15.56,
+    "id": "w29"
+  },
+  {
+    "text": "no",
+    "start": 15.64,
+    "end": 15.8,
+    "id": "w30"
+  },
+  {
+    "text": "all-nighters,",
+    "start": 15.8,
+    "end": 16.93,
+    "id": "w31"
+  },
+  {
+    "text": "no",
+    "start": 16.93,
+    "end": 17.09,
+    "id": "w32"
+  },
+  {
+    "text": "endless",
+    "start": 17.09,
+    "end": 17.66,
+    "id": "w33"
+  },
+  {
+    "text": "scrolling.",
+    "start": 17.66,
+    "end": 18.68,
+    "id": "w34"
+  },
+  {
+    "text": "The",
+    "start": 18.77,
+    "end": 18.87,
+    "id": "w35"
+  },
+  {
+    "text": "Gita",
+    "start": 18.87,
+    "end": 19.12,
+    "id": "w36"
+  },
+  {
+    "text": "doesn't",
+    "start": 19.12,
+    "end": 19.48,
+    "id": "w37"
+  },
+  {
+    "text": "ask",
+    "start": 19.56,
+    "end": 19.73,
+    "id": "w38"
+  },
+  {
+    "text": "you",
+    "start": 19.74,
+    "end": 19.93,
+    "id": "w39"
+  },
+  {
+    "text": "to",
+    "start": 19.93,
+    "end": 19.99,
+    "id": "w40"
+  },
+  {
+    "text": "hide",
+    "start": 20.06,
+    "end": 20.28,
+    "id": "w41"
+  },
+  {
+    "text": "your",
+    "start": 20.28,
+    "end": 20.41,
+    "id": "w42"
+  },
+  {
+    "text": "energy",
+    "start": 20.69,
+    "end": 20.93,
+    "id": "w43"
+  },
+  {
+    "text": "from",
+    "start": 20.93,
+    "end": 21.18,
+    "id": "w44"
+  },
+  {
+    "text": "the",
+    "start": 21.18,
+    "end": 21.32,
+    "id": "w45"
+  },
+  {
+    "text": "world.",
+    "start": 21.43,
+    "end": 21.92,
+    "id": "w46"
+  },
+  {
+    "text": "It",
+    "start": 22.01,
+    "end": 22.09,
+    "id": "w47"
+  },
+  {
+    "text": "asks",
+    "start": 22.09,
+    "end": 22.43,
+    "id": "w48"
+  },
+  {
+    "text": "you",
+    "start": 22.43,
+    "end": 22.68,
+    "id": "w49"
+  },
+  {
+    "text": "to",
+    "start": 22.68,
+    "end": 22.85,
+    "id": "w50"
+  },
+  {
+    "text": "stop",
+    "start": 22.85,
+    "end": 23.19,
+    "id": "w51"
+  },
+  {
+    "text": "spending",
+    "start": 23.19,
+    "end": 23.52,
+    "id": "w52"
+  },
+  {
+    "text": "it",
+    "start": 23.93,
+    "end": 24.04,
+    "id": "w53"
+  },
+  {
+    "text": "carelessly.",
+    "start": 24.04,
+    "end": 25.16,
+    "id": "w54"
+  },
+  {
+    "text": "Small",
+    "start": 25.27,
+    "end": 25.55,
+    "id": "w55"
+  },
+  {
+    "text": "habits,",
+    "start": 25.55,
+    "end": 26.15,
+    "id": "w56"
+  },
+  {
+    "text": "kept",
+    "start": 26.17,
+    "end": 26.47,
+    "id": "w57"
+  },
+  {
+    "text": "in",
+    "start": 26.47,
+    "end": 26.63,
+    "id": "w58"
+  },
+  {
+    "text": "balance,",
+    "start": 26.63,
+    "end": 27.33,
+    "id": "w59"
+  },
+  {
+    "text": "protect",
+    "start": 27.33,
+    "end": 27.8,
+    "id": "w60"
+  },
+  {
+    "text": "your",
+    "start": 27.96,
+    "end": 28.13,
+    "id": "w61"
+  },
+  {
+    "text": "mind.",
+    "start": 28.19,
+    "end": 28.62,
+    "id": "w62"
+  },
+  {
+    "text": "Which",
+    "start": 28.91,
+    "end": 29.18,
+    "id": "w63"
+  },
+  {
+    "text": "habit",
+    "start": 29.18,
+    "end": 29.56,
+    "id": "w64"
+  },
+  {
+    "text": "drains",
+    "start": 29.56,
+    "end": 30.02,
+    "id": "w65"
+  },
+  {
+    "text": "you",
+    "start": 30.02,
+    "end": 30.25,
+    "id": "w66"
+  },
+  {
+    "text": "most?",
+    "start": 30.25,
+    "end": 30.8,
+    "id": "w67"
+  },
+  {
+    "text": "Comment",
+    "start": 30.82,
+    "end": 31.2,
+    "id": "w68"
+  },
+  {
+    "text": "below.",
+    "start": 31.27,
+    "end": 31.68,
+    "id": "w69"
+  }
+]

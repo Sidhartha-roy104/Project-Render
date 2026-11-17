@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 4</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+    .bg-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: center center;
+    }
+    .title-box {
+      position: absolute;
+      top: 160px;
+      left: 120px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sub-title {
+      font-size: 34px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.8);
+    }
+    .main-title {
+      font-size: 80px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.05;
+    }
+    .color-orange {
+      color: #ff9500;
+      text-shadow: 0 0 25px rgba(255, 149, 0, 0.8), 0 0 50px rgba(255, 149, 0, 0.4);
+    }
+    .color-red {
+      color: #ff3333;
+      text-shadow: 0 0 25px rgba(255, 51, 51, 0.8), 0 0 50px rgba(255, 51, 51, 0.4);
+    }
+    .color-gold {
+      color: #ffcc00;
+      text-shadow: 0 0 25px rgba(255, 204, 0, 0.8), 0 0 50px rgba(255, 204, 0, 0.4);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" class="clip" data-composition-id="scene4" data-width="1080" data-height="1920" data-start="0" data-duration="10.12">
+    <img id="bg" class="bg-img" src="assets/images/shot4.jpg" alt="Steady oil lamp in midnight blue room">
+
+    <!-- Beat 1: Don't hide your ENERGY -->
+    <div id="beat1" class="title-box">
+      <div class="sub-title">DON'T HIDE YOUR</div>
+      <div id="wordEnergy" class="main-title color-orange">ENERGY</div>
+    </div>
+
+    <!-- Beat 2: Stop spending it CARELESSLY -->
+    <div id="beat2" class="title-box">
+      <div class="sub-title">STOP SPENDING IT</div>
+      <div id="wordCarelessly" class="main-title color-red">CARELESSLY</div>
+    </div>
+
+    <!-- Beat 3: Small habits PROTECT YOUR MIND -->
+    <div id="beat3" class="title-box">
+      <div class="sub-title">SMALL HABITS</div>
+      <div id="wordProtect" class="main-title color-gold" style="font-size: 72px;">PROTECT YOUR MIND</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene4"] = tl;
+
+    // Initial states
+    gsap.set(["#beat1", "#beat2", "#beat3"], { opacity: 0 });
+    gsap.set("#wordEnergy", { opacity: 0, scale: 0.9 });
+    gsap.set("#wordCarelessly", { opacity: 0, scale: 0.9 });
+    gsap.set("#wordProtect", { opacity: 0, scale: 0.9 });
+
+    // Slow push-in
+    tl.fromTo("#bg", { scale: 1.0 }, { scale: 1.08, duration: 10.12, ease: "none" }, 0);
+
+    // Beat 1 (t=0.09s to 3.24s)
+    tl.to("#beat1", { opacity: 1, duration: 0.15 }, 0.09);
+    tl.to("#wordEnergy", { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, 2.01);
+
+    // Beat 2 (t=3.24s to 6.48s)
+    tl.to("#beat1", { opacity: 0, duration: 0.1 }, 3.15);
+    tl.to("#beat2", { opacity: 1, duration: 0.15 }, 3.24);
+    tl.to("#wordCarelessly", { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, 5.36);
+
+    // Beat 3 (t=6.48s to 10.12s)
+    tl.to("#beat2", { opacity: 0, duration: 0.1 }, 6.40);
+    tl.to("#beat3", { opacity: 1, duration: 0.15 }, 6.48);
+    tl.to("#wordProtect", { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)" }, 8.65);
+  </script>
+</body>
+</html>

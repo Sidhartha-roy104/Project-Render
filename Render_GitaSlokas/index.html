@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentary Reel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #root {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      overflow: hidden;
+    }
+    .clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+
+    /* Secret Sauce: Paper Overlay with 7 Punch Holes, Crease, Grain, and Vignette */
+    #paperOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(35, 20, 10, 0.48) 100%);
+    }
+    .paper-crease {
+      position: absolute;
+      top: 0;
+      left: 67%;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.22), rgba(255,255,255,0.08), rgba(0,0,0,0.28));
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    .punch-hole {
+      position: absolute;
+      left: 32px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #14110f;
+      box-shadow: inset 2px 3px 6px rgba(0,0,0,0.95), 1px 1px 1px rgba(255,255,255,0.18);
+    }
+    .h1 { top: 220px; }
+    .h2 { top: 440px; }
+    .h3 { top: 660px; }
+    .h4 { top: 880px; }
+    .h5 { top: 1100px; }
+    .h6 { top: 1320px; }
+    .h7 { top: 1540px; }
+
+    .grain-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.14;
+      mix-blend-mode: overlay;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-width="1080" data-height="1920">
+    <!-- Master Audio Track (-14 LUFS, sidechain ducked, BGM + VO + whoosh/boom SFX) -->
+    <audio id="master-audio" src="assets/audio_final.mp3" data-start="0" data-duration="31.72"></audio>
+
+    <!-- 5 Modular Scenes (Exact cut points synchronized with transcript.json) -->
+    <div id="scene1-host" class="clip" data-composition-id="scene1" data-composition-src="compositions/scene1.html" data-start="0.00" data-duration="3.76"></div>
+    <div id="scene2-host" class="clip" data-composition-id="scene2" data-composition-src="compositions/scene2.html" data-start="3.76" data-duration="8.56"></div>
+    <div id="scene3-host" class="clip" data-composition-id="scene3" data-composition-src="compositions/scene3.html" data-start="12.32" data-duration="6.36"></div>
+    <div id="scene4-host" class="clip" data-composition-id="scene4" data-composition-src="compositions/scene4.html" data-start="18.68" data-duration="10.12"></div>
+    <div id="scene5-host" class="clip" data-composition-id="scene5" data-composition-src="compositions/scene5.html" data-start="28.80" data-duration="2.92"></div>
+
+    <!-- Paper Overlay on top of all frames -->
+    <div id="paperOverlay">
+      <div class="vignette"></div>
+      <div class="paper-crease"></div>
+
+      <!-- 7 Binder Punch Holes Down the Left Edge -->
+      <div class="punch-hole h1"></div>
+      <div class="punch-hole h2"></div>
+      <div class="punch-hole h3"></div>
+      <div class="punch-hole h4"></div>
+      <div class="punch-hole h5"></div>
+      <div class="punch-hole h6"></div>
+      <div class="punch-hole h7"></div>
+
+      <!-- Fine Paper Grain -->
+      <svg class="grain-layer" width="100%" height="100%">
+        <filter id="noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = gsap.timeline({ paused: true });
+  </script>
+</body>
+</html>
