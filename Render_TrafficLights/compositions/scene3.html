@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 3 - Fixed Time Signals</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('../assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #0a0b10;
+      font-family: 'Oswald', -apple-system, sans-serif;
+    }
+    .scene-container {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: 50% 40%;
+    }
+
+    /* Top-Left Title */
+    .title-group {
+      position: absolute;
+      top: 140px;
+      left: 70px;
+      z-index: 20;
+    }
+    .accent-bar {
+      width: 60px;
+      height: 4px;
+      background: #ef4444;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #ef4444;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .main-title {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+    }
+    .main-title span {
+      color: #ef4444;
+      text-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+    }
+
+    /* Interactive Signal Timing Panel */
+    .timing-panel {
+      position: absolute;
+      bottom: 240px;
+      left: 70px;
+      right: 70px;
+      padding: 30px;
+      background: rgba(11, 15, 25, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      z-index: 25;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .panel-title {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f1f5f9;
+      text-transform: uppercase;
+    }
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      border-radius: 30px;
+      color: #ef4444;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .timer-badge.green-active {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: rgba(16, 185, 129, 0.5);
+      color: #10b981;
+    }
+
+    /* Horizontal Segmented Bar */
+    .progress-bar-container {
+      position: relative;
+      height: 44px;
+      background: #1e293b;
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .bar-seg {
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .seg-red { width: 50%; background: #dc2626; }
+    .seg-yellow { width: 15%; background: #d97706; }
+    .seg-green { width: 35%; background: #059669; }
+
+    .needle {
+      position: absolute;
+      top: -6px;
+      bottom: -6px;
+      left: 0%;
+      width: 6px;
+      background: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 0 12px #ffffff, 0 0 20px #06b6d4;
+      z-index: 10;
+    }
+
+    /* Fixed Schedule Limitation Callout */
+    .limitation-box {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 10px;
+      color: #fca5a5;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div class="scene-container" data-composition-id="scene3">
+    <img id="bgImage" class="bg-img" src="../assets/images/shot3.jpg" alt="Traffic Signal Head">
+
+    <div class="title-group" id="titleGroup">
+      <div class="accent-bar" id="accentBar"></div>
+      <div class="category-badge" id="catBadge">LEGACY SYSTEM</div>
+      <h1 class="main-title" id="mainTitle">FIXED-TIME <span>SCHEDULES</span></h1>
+    </div>
+
+    <!-- Timing Panel -->
+    <div class="timing-panel" id="timingPanel">
+      <div class="panel-header">
+        <div class="panel-title">PROGRAMMED CYCLE</div>
+        <div class="timer-badge" id="timerBadge">
+          <span id="timerText">RED • 45s</span>
+        </div>
+      </div>
+
+      <!-- Signal Timing Segments -->
+      <div class="progress-bar-container">
+        <div class="bar-seg seg-red">RED 45s</div>
+        <div class="bar-seg seg-yellow">YEL 5s</div>
+        <div class="bar-seg seg-green">GRN 30s</div>
+        <div class="needle" id="needle"></div>
+      </div>
+
+      <!-- Limitation Callout -->
+      <div class="limitation-box" id="limitationBox">
+        <span>⚠ PRE-PROGRAMMED TIMER (BLIND TO LIVE TRAFFIC)</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene3"] = tl;
+
+    // Gentle camera zoom
+    tl.fromTo("#bgImage", 
+      { scale: 1.0, y: 0 }, 
+      { scale: 1.12, y: -20, duration: 9.16, ease: "none" }, 0
+    );
+
+    // Title reveal (0.0s - 1.2s)
+    tl.fromTo("#accentBar", { width: 0, opacity: 0 }, { width: 60, opacity: 1, duration: 0.35 }, 0.2);
+    tl.fromTo("#catBadge", { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(1.4)" }, 0.35);
+    tl.fromTo("#mainTitle", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, 0.5);
+
+    // Panel pop-in (~1.2s)
+    tl.fromTo("#timingPanel", 
+      { y: 50, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.3)" }, 1.2
+    );
+
+    // Needle sweep & cycle switching (sync with "switching between red, yellow and green" ~4.0s - 8.2s)
+    // Red phase (0% - 50%): 4.0s to 5.5s
+    tl.fromTo("#needle", { left: "0%" }, { left: "50%", duration: 1.8, ease: "linear" }, 4.0);
+
+    // Switch to Yellow at 5.8s
+    tl.add(() => {
+      document.getElementById("timerText").innerText = "YELLOW • 5s";
+      document.getElementById("timerBadge").className = "timer-badge";
+    }, 5.8);
+    tl.to("#needle", { left: "65%", duration: 0.8, ease: "linear" }, 5.8);
+
+    // Switch to Green at 6.6s
+    tl.add(() => {
+      document.getElementById("timerText").innerText = "GREEN • 30s";
+      document.getElementById("timerBadge").className = "timer-badge green-active";
+    }, 6.6);
+    tl.to("#needle", { left: "100%", duration: 1.6, ease: "linear" }, 6.6);
+
+    // Limitation callout highlight (~7.2s, sync with "at programmed intervals")
+    tl.fromTo("#limitationBox", 
+      { scale: 0.95, opacity: 0.5 }, 
+      { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(1.5)" }, 7.2
+    );
+  </script>
+</body>
+</html>

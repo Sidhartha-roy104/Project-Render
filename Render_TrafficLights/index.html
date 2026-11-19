@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How Indian Traffic Lights Actually Work</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #0a0b10;
+      font-family: 'Oswald', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #root {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      overflow: hidden;
+      background: #0a0b10;
+    }
+    .clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+
+    /* Subtle Cinematic Vignette */
+    #cinematicOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(5, 7, 12, 0.55) 100%);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-width="1080" data-height="1920">
+    <!-- Master Audio Track (-14.8 LUFS, sidechain ducked, BGM + VO + SFX) -->
+    <audio id="master-audio" src="assets/audio_final.mp3" data-start="0" data-duration="53.93"></audio>
+
+    <!-- 8 Modular Scenes (Synchronized with transcript.json) -->
+    <div id="scene1-host" class="clip" data-composition-id="scene1" data-composition-src="compositions/scene1.html" data-start="0.00" data-duration="4.84"></div>
+    <div id="scene2-host" class="clip" data-composition-id="scene2" data-composition-src="compositions/scene2.html" data-start="4.84" data-duration="7.06"></div>
+    <div id="scene3-host" class="clip" data-composition-id="scene3" data-composition-src="compositions/scene3.html" data-start="11.90" data-duration="9.16"></div>
+    <div id="scene4-host" class="clip" data-composition-id="scene4" data-composition-src="compositions/scene4.html" data-start="21.06" data-duration="7.06"></div>
+    <div id="scene5-host" class="clip" data-composition-id="scene5" data-composition-src="compositions/scene5.html" data-start="28.12" data-duration="5.08"></div>
+    <div id="scene6-host" class="clip" data-composition-id="scene6" data-composition-src="compositions/scene6.html" data-start="33.20" data-duration="5.40"></div>
+    <div id="scene7-host" class="clip" data-composition-id="scene7" data-composition-src="compositions/scene7.html" data-start="38.60" data-duration="10.50"></div>
+    <div id="scene8-host" class="clip" data-composition-id="scene8" data-composition-src="compositions/scene8.html" data-start="49.10" data-duration="4.83"></div>
+
+    <!-- Clean Cinematic Vignette Overlay -->
+    <div id="cinematicOverlay">
+      <div class="vignette"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = gsap.timeline({ paused: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 4 - Buried Road Sensors</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('../assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #0a0b10;
+      font-family: 'Oswald', -apple-system, sans-serif;
+    }
+    .scene-container {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: 50% 60%;
+    }
+
+    /* Top-Left Title */
+    .title-group {
+      position: absolute;
+      top: 140px;
+      left: 70px;
+      z-index: 20;
+    }
+    .accent-bar {
+      width: 60px;
+      height: 4px;
+      background: #06b6d4;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.7);
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #06b6d4;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .main-title {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+    }
+    .main-title span {
+      color: #06b6d4;
+      text-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
+    }
+
+    /* SVG Magnetic Field Pulse & Signal Path */
+    .svg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      pointer-events: none;
+      z-index: 15;
+    }
+
+    /* Inductive Loop Callout */
+    .sensor-callout {
+      position: absolute;
+      bottom: 280px;
+      left: 70px;
+      padding: 20px 28px;
+      background: rgba(11, 15, 25, 0.94);
+      border: 1px solid rgba(6, 182, 212, 0.5);
+      border-left: 6px solid #06b6d4;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(6, 182, 212, 0.3);
+      backdrop-filter: blur(10px);
+      z-index: 25;
+    }
+    .sensor-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #06b6d4;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .sensor-desc {
+      font-size: 28px;
+      color: #cbd5e1;
+      letter-spacing: 1px;
+    }
+
+    /* Controller Node Icon Badge */
+    .controller-badge {
+      position: absolute;
+      top: 720px;
+      right: 70px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 22px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      border-radius: 30px;
+      color: #f59e0b;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      z-index: 25;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+    }
+    .pulse-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 10px #f59e0b;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div class="scene-container" data-composition-id="scene4">
+    <img id="bgImage" class="bg-img" src="../assets/images/shot4.jpg" alt="Road Cross Section">
+
+    <div class="title-group" id="titleGroup">
+      <div class="accent-bar" id="accentBar"></div>
+      <div class="category-badge" id="catBadge">IN-ROAD DETECTION</div>
+      <h1 class="main-title" id="mainTitle">INDUCTIVE <span>LOOP SENSORS</span></h1>
+    </div>
+
+    <!-- SVG Layer for Magnetic Field & Pulse Line -->
+    <svg class="svg-layer" viewBox="0 0 1080 1920">
+      <defs>
+        <filter id="glow-cyan">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Electromagnetic waves under car -->
+      <ellipse id="fieldWave1" cx="540" cy="1150" rx="180" ry="60" fill="none" stroke="#06b6d4" stroke-width="3" opacity="0" filter="url(#glow-cyan)"/>
+      <ellipse id="fieldWave2" cx="540" cy="1150" rx="260" ry="90" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0" filter="url(#glow-cyan)"/>
+
+      <!-- Signal cable running from buried loop to controller -->
+      <path id="signalCable" d="M 540 1250 Q 800 1100 860 780" fill="none" stroke="#06b6d4" stroke-width="4" stroke-dasharray="10,6" opacity="0" filter="url(#glow-cyan)"/>
+      <circle id="signalPacket" cx="540" cy="1250" r="9" fill="#ffffff" opacity="0" filter="url(#glow-cyan)"/>
+    </svg>
+
+    <!-- Controller Node Badge -->
+    <div class="controller-badge" id="ctrlBadge">
+      <div class="pulse-dot" id="pulseDot"></div>
+      <span>SIGNAL RECEIVER</span>
+    </div>
+
+    <!-- Sensor Callout -->
+    <div class="sensor-callout" id="sensorCallout">
+      <div class="sensor-title">COPPER WIRE LOOP</div>
+      <div class="sensor-desc">Metal car chassis changes magnetic inductance</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene4"] = tl;
+
+    // Gentle camera push
+    tl.fromTo("#bgImage", 
+      { scale: 1.0, y: 0 }, 
+      { scale: 1.10, y: -25, duration: 7.06, ease: "none" }, 0
+    );
+
+    // Title reveal
+    tl.fromTo("#accentBar", { width: 0, opacity: 0 }, { width: 60, opacity: 1, duration: 0.35 }, 0.2);
+    tl.fromTo("#catBadge", { y: -15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(1.4)" }, 0.35);
+    tl.fromTo("#mainTitle", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, 0.5);
+
+    // Reveal buried sensor & waves (sync with "sensors buried in the road" ~4.1s)
+    tl.fromTo("#sensorCallout", 
+      { y: 40, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 4.1
+    );
+
+    // Magnetic field pulse waves
+    tl.fromTo("#fieldWave1", 
+      { rx: 120, ry: 40, opacity: 0.9 }, 
+      { rx: 220, ry: 75, opacity: 0, duration: 1.2, repeat: 1, ease: "power1.out" }, 4.3
+    );
+    tl.fromTo("#fieldWave2", 
+      { rx: 180, ry: 60, opacity: 0.8 }, 
+      { rx: 300, ry: 105, opacity: 0, duration: 1.4, repeat: 1, ease: "power1.out" }, 4.5
+    );
+
+    // Signal cable & controller transmission
+    tl.fromTo("#ctrlBadge", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }, 4.8);
+    tl.fromTo("#signalCable", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 5.0);
+
+    // Electric pulse packet travelling up cable
+    tl.fromTo("#signalPacket", 
+      { cx: 540, cy: 1250, opacity: 1 }, 
+      { cx: 860, cy: 780, opacity: 0.9, duration: 1.0, ease: "power1.inOut" }, 5.2
+    );
+  </script>
+</body>
+</html>

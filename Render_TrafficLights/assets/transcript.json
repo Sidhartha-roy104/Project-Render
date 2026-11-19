@@ -1,0 +1,674 @@
+[
+  {
+    "text": "Ever",
+    "start": 0.07,
+    "end": 0.27,
+    "id": "w0"
+  },
+  {
+    "text": "wondered",
+    "start": 0.27,
+    "end": 0.8,
+    "id": "w1"
+  },
+  {
+    "text": "what's",
+    "start": 0.8,
+    "end": 1.17,
+    "id": "w2"
+  },
+  {
+    "text": "inside",
+    "start": 1.24,
+    "end": 1.62,
+    "id": "w3"
+  },
+  {
+    "text": "that",
+    "start": 1.62,
+    "end": 1.91,
+    "id": "w4"
+  },
+  {
+    "text": "grey",
+    "start": 1.92,
+    "end": 2.48,
+    "id": "w5"
+  },
+  {
+    "text": "metal",
+    "start": 2.48,
+    "end": 2.99,
+    "id": "w6"
+  },
+  {
+    "text": "box",
+    "start": 2.99,
+    "end": 3.3,
+    "id": "w7"
+  },
+  {
+    "text": "at",
+    "start": 3.3,
+    "end": 3.53,
+    "id": "w8"
+  },
+  {
+    "text": "every",
+    "start": 3.68,
+    "end": 4.01,
+    "id": "w9"
+  },
+  {
+    "text": "junction?",
+    "start": 4.01,
+    "end": 4.68,
+    "id": "w10"
+  },
+  {
+    "text": "It's",
+    "start": 4.91,
+    "end": 5.14,
+    "id": "w11"
+  },
+  {
+    "text": "called",
+    "start": 5.14,
+    "end": 5.6,
+    "id": "w12"
+  },
+  {
+    "text": "a",
+    "start": 5.61,
+    "end": 5.67,
+    "id": "w13"
+  },
+  {
+    "text": "traffic",
+    "start": 5.67,
+    "end": 6.22,
+    "id": "w14"
+  },
+  {
+    "text": "signal",
+    "start": 6.32,
+    "end": 6.7,
+    "id": "w15"
+  },
+  {
+    "text": "controller,",
+    "start": 6.7,
+    "end": 7.52,
+    "id": "w16"
+  },
+  {
+    "text": "basically",
+    "start": 7.59,
+    "end": 8.2,
+    "id": "w17"
+  },
+  {
+    "text": "a",
+    "start": 8.2,
+    "end": 8.26,
+    "id": "w18"
+  },
+  {
+    "text": "small",
+    "start": 8.26,
+    "end": 8.55,
+    "id": "w19"
+  },
+  {
+    "text": "computer",
+    "start": 8.69,
+    "end": 9.24,
+    "id": "w20"
+  },
+  {
+    "text": "deciding",
+    "start": 9.24,
+    "end": 9.84,
+    "id": "w21"
+  },
+  {
+    "text": "who",
+    "start": 9.84,
+    "end": 10.06,
+    "id": "w22"
+  },
+  {
+    "text": "moves",
+    "start": 10.06,
+    "end": 10.48,
+    "id": "w23"
+  },
+  {
+    "text": "and",
+    "start": 10.48,
+    "end": 10.75,
+    "id": "w24"
+  },
+  {
+    "text": "who",
+    "start": 10.75,
+    "end": 11.05,
+    "id": "w25"
+  },
+  {
+    "text": "waits.",
+    "start": 11.2,
+    "end": 11.9,
+    "id": "w26"
+  },
+  {
+    "text": "Traditionally,",
+    "start": 11.97,
+    "end": 12.93,
+    "id": "w27"
+  },
+  {
+    "text": "many",
+    "start": 13.07,
+    "end": 13.28,
+    "id": "w28"
+  },
+  {
+    "text": "signals",
+    "start": 13.38,
+    "end": 14,
+    "id": "w29"
+  },
+  {
+    "text": "ran",
+    "start": 14,
+    "end": 14.27,
+    "id": "w30"
+  },
+  {
+    "text": "on",
+    "start": 14.27,
+    "end": 14.45,
+    "id": "w31"
+  },
+  {
+    "text": "fixed",
+    "start": 14.45,
+    "end": 14.91,
+    "id": "w32"
+  },
+  {
+    "text": "schedules,",
+    "start": 14.91,
+    "end": 15.96,
+    "id": "w33"
+  },
+  {
+    "text": "switching",
+    "start": 16.03,
+    "end": 16.66,
+    "id": "w34"
+  },
+  {
+    "text": "between",
+    "start": 16.66,
+    "end": 16.99,
+    "id": "w35"
+  },
+  {
+    "text": "red,",
+    "start": 17.2,
+    "end": 17.6,
+    "id": "w36"
+  },
+  {
+    "text": "yellow",
+    "start": 17.6,
+    "end": 18.26,
+    "id": "w37"
+  },
+  {
+    "text": "and",
+    "start": 18.26,
+    "end": 18.59,
+    "id": "w38"
+  },
+  {
+    "text": "green",
+    "start": 18.59,
+    "end": 19.13,
+    "id": "w39"
+  },
+  {
+    "text": "at",
+    "start": 19.15,
+    "end": 19.26,
+    "id": "w40"
+  },
+  {
+    "text": "programmed",
+    "start": 19.33,
+    "end": 20.1,
+    "id": "w41"
+  },
+  {
+    "text": "intervals.",
+    "start": 20.1,
+    "end": 21.06,
+    "id": "w42"
+  },
+  {
+    "text": "But",
+    "start": 21.13,
+    "end": 21.34,
+    "id": "w43"
+  },
+  {
+    "text": "how",
+    "start": 21.34,
+    "end": 21.62,
+    "id": "w44"
+  },
+  {
+    "text": "does",
+    "start": 21.62,
+    "end": 22,
+    "id": "w45"
+  },
+  {
+    "text": "a",
+    "start": 22,
+    "end": 22.09,
+    "id": "w46"
+  },
+  {
+    "text": "signal",
+    "start": 22.09,
+    "end": 22.66,
+    "id": "w47"
+  },
+  {
+    "text": "know",
+    "start": 22.66,
+    "end": 23.03,
+    "id": "w48"
+  },
+  {
+    "text": "when",
+    "start": 23.15,
+    "end": 23.38,
+    "id": "w49"
+  },
+  {
+    "text": "traffic",
+    "start": 23.38,
+    "end": 23.94,
+    "id": "w50"
+  },
+  {
+    "text": "is",
+    "start": 23.94,
+    "end": 24.1,
+    "id": "w51"
+  },
+  {
+    "text": "building",
+    "start": 24.1,
+    "end": 24.58,
+    "id": "w52"
+  },
+  {
+    "text": "up?",
+    "start": 24.74,
+    "end": 25.16,
+    "id": "w53"
+  },
+  {
+    "text": "Some",
+    "start": 25.23,
+    "end": 25.44,
+    "id": "w54"
+  },
+  {
+    "text": "junctions",
+    "start": 25.44,
+    "end": 26.08,
+    "id": "w55"
+  },
+  {
+    "text": "use",
+    "start": 26.08,
+    "end": 26.19,
+    "id": "w56"
+  },
+  {
+    "text": "sensors",
+    "start": 26.33,
+    "end": 26.79,
+    "id": "w57"
+  },
+  {
+    "text": "buried",
+    "start": 26.79,
+    "end": 27.13,
+    "id": "w58"
+  },
+  {
+    "text": "in",
+    "start": 27.25,
+    "end": 27.36,
+    "id": "w59"
+  },
+  {
+    "text": "the",
+    "start": 27.36,
+    "end": 27.57,
+    "id": "w60"
+  },
+  {
+    "text": "road.",
+    "start": 27.57,
+    "end": 28.12,
+    "id": "w61"
+  },
+  {
+    "text": "Others",
+    "start": 28.19,
+    "end": 28.61,
+    "id": "w62"
+  },
+  {
+    "text": "use",
+    "start": 28.61,
+    "end": 28.85,
+    "id": "w63"
+  },
+  {
+    "text": "overhead",
+    "start": 28.85,
+    "end": 29.5,
+    "id": "w64"
+  },
+  {
+    "text": "cameras",
+    "start": 29.5,
+    "end": 30.06,
+    "id": "w65"
+  },
+  {
+    "text": "and",
+    "start": 30.06,
+    "end": 30.31,
+    "id": "w66"
+  },
+  {
+    "text": "computer",
+    "start": 30.31,
+    "end": 30.96,
+    "id": "w67"
+  },
+  {
+    "text": "vision",
+    "start": 30.96,
+    "end": 31.42,
+    "id": "w68"
+  },
+  {
+    "text": "to",
+    "start": 31.48,
+    "end": 31.65,
+    "id": "w69"
+  },
+  {
+    "text": "estimate",
+    "start": 31.8,
+    "end": 32.48,
+    "id": "w70"
+  },
+  {
+    "text": "cues.",
+    "start": 32.48,
+    "end": 33.2,
+    "id": "w71"
+  },
+  {
+    "text": "Adaptive",
+    "start": 33.27,
+    "end": 33.9,
+    "id": "w72"
+  },
+  {
+    "text": "systems",
+    "start": 33.9,
+    "end": 34.52,
+    "id": "w73"
+  },
+  {
+    "text": "then",
+    "start": 34.52,
+    "end": 34.87,
+    "id": "w74"
+  },
+  {
+    "text": "stretch",
+    "start": 34.87,
+    "end": 35.49,
+    "id": "w75"
+  },
+  {
+    "text": "or",
+    "start": 35.49,
+    "end": 35.66,
+    "id": "w76"
+  },
+  {
+    "text": "shorten",
+    "start": 35.66,
+    "end": 36.27,
+    "id": "w77"
+  },
+  {
+    "text": "green",
+    "start": 36.27,
+    "end": 36.67,
+    "id": "w78"
+  },
+  {
+    "text": "time",
+    "start": 36.72,
+    "end": 37.12,
+    "id": "w79"
+  },
+  {
+    "text": "based",
+    "start": 37.12,
+    "end": 37.67,
+    "id": "w80"
+  },
+  {
+    "text": "on",
+    "start": 37.67,
+    "end": 37.87,
+    "id": "w81"
+  },
+  {
+    "text": "demand.",
+    "start": 38.15,
+    "end": 38.6,
+    "id": "w82"
+  },
+  {
+    "text": "And",
+    "start": 38.67,
+    "end": 38.81,
+    "id": "w83"
+  },
+  {
+    "text": "in",
+    "start": 38.81,
+    "end": 38.95,
+    "id": "w84"
+  },
+  {
+    "text": "some",
+    "start": 38.95,
+    "end": 39.24,
+    "id": "w85"
+  },
+  {
+    "text": "cities,",
+    "start": 39.24,
+    "end": 39.77,
+    "id": "w86"
+  },
+  {
+    "text": "emergency",
+    "start": 39.84,
+    "end": 40.73,
+    "id": "w87"
+  },
+  {
+    "text": "vehicles",
+    "start": 40.73,
+    "end": 41.51,
+    "id": "w88"
+  },
+  {
+    "text": "get",
+    "start": 41.51,
+    "end": 41.79,
+    "id": "w89"
+  },
+  {
+    "text": "green",
+    "start": 41.81,
+    "end": 42.32,
+    "id": "w90"
+  },
+  {
+    "text": "corridors,",
+    "start": 42.32,
+    "end": 43.28,
+    "id": "w91"
+  },
+  {
+    "text": "coordinated",
+    "start": 43.55,
+    "end": 44.7,
+    "id": "w92"
+  },
+  {
+    "text": "through",
+    "start": 44.7,
+    "end": 45.48,
+    "id": "w93"
+  },
+  {
+    "text": "GPS,",
+    "start": 45.48,
+    "end": 45.9,
+    "id": "w94"
+  },
+  {
+    "text": "traffic",
+    "start": 46.13,
+    "end": 46.61,
+    "id": "w95"
+  },
+  {
+    "text": "police",
+    "start": 46.61,
+    "end": 47.08,
+    "id": "w96"
+  },
+  {
+    "text": "and",
+    "start": 47.08,
+    "end": 47.32,
+    "id": "w97"
+  },
+  {
+    "text": "a",
+    "start": 47.32,
+    "end": 47.4,
+    "id": "w98"
+  },
+  {
+    "text": "central",
+    "start": 47.4,
+    "end": 47.95,
+    "id": "w99"
+  },
+  {
+    "text": "control",
+    "start": 47.95,
+    "end": 48.5,
+    "id": "w100"
+  },
+  {
+    "text": "room.",
+    "start": 48.5,
+    "end": 49.1,
+    "id": "w101"
+  },
+  {
+    "text": "Which",
+    "start": 49.17,
+    "end": 49.47,
+    "id": "w102"
+  },
+  {
+    "text": "junction",
+    "start": 49.47,
+    "end": 50.07,
+    "id": "w103"
+  },
+  {
+    "text": "near",
+    "start": 50.07,
+    "end": 50.37,
+    "id": "w104"
+  },
+  {
+    "text": "you",
+    "start": 50.37,
+    "end": 50.59,
+    "id": "w105"
+  },
+  {
+    "text": "needs",
+    "start": 50.59,
+    "end": 50.96,
+    "id": "w106"
+  },
+  {
+    "text": "a",
+    "start": 50.96,
+    "end": 51.03,
+    "id": "w107"
+  },
+  {
+    "text": "smarter",
+    "start": 51.03,
+    "end": 51.55,
+    "id": "w108"
+  },
+  {
+    "text": "light?",
+    "start": 51.55,
+    "end": 52.17,
+    "id": "w109"
+  },
+  {
+    "text": "Comment",
+    "start": 52.27,
+    "end": 52.68,
+    "id": "w110"
+  },
+  {
+    "text": "below.",
+    "start": 52.68,
+    "end": 53.23,
+    "id": "w111"
+  }
+]

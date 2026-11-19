@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 5 — Urban Obstacles & Interference</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('../assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #060913;
+      font-family: 'Oswald', -apple-system, sans-serif;
+    }
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: 50% 50%;
+    }
+    .vignette-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(12, 6, 8, 0.75) 100%);
+      pointer-events: none;
+    }
+
+    /* Top Left Title Group */
+    .title-group {
+      position: absolute;
+      top: 170px;
+      left: 70px;
+      right: 70px;
+      z-index: 20;
+    }
+    .accent-bar {
+      width: 60px;
+      height: 4px;
+      background: #ffb300;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 16px rgba(255, 179, 0, 0.8);
+    }
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      background: rgba(30, 20, 10, 0.88);
+      border: 1px solid rgba(255, 179, 0, 0.6);
+      color: #ffb300;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: #ffb300;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffb300;
+    }
+    .main-title {
+      font-size: 68px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+    }
+    .main-title span {
+      color: #ffb300;
+      text-shadow: 0 0 25px rgba(255, 179, 0, 0.6);
+    }
+
+    /* Warning Alert Cards (Safe zone: y ~ 1060px to 1320px) */
+    .warning-panel {
+      position: absolute;
+      top: 1060px;
+      left: 70px;
+      right: 70px;
+      padding: 22px 28px;
+      background: rgba(26, 15, 12, 0.9);
+      border: 1px solid rgba(255, 179, 0, 0.5);
+      border-left: 6px solid #ffb300;
+      border-radius: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      z-index: 20;
+    }
+    .warning-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .warning-label {
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: #ffb300;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .warning-code {
+      font-family: monospace;
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .warning-desc {
+      font-size: 32px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .warning-desc em {
+      font-style: normal;
+      color: #ffb300;
+    }
+
+    /* Multipath reflection diagram callout */
+    .multipath-pill {
+      position: absolute;
+      top: 1220px;
+      left: 70px;
+      right: 70px;
+      padding: 16px 24px;
+      background: rgba(18, 22, 34, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 20;
+      font-family: monospace;
+      font-size: 28px;
+      color: #ffffff;
+    }
+    .multipath-pill span {
+      color: #ef4444;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" data-composition-id="scene5">
+    <img id="bgImg" class="bg-img" src="../assets/images/scene5_urban_canyon_tunnel.jpg" alt="Urban Canyon Signal Block">
+    <div class="vignette-overlay"></div>
+
+    <!-- Title Group -->
+    <div class="title-group" id="titleGroup">
+      <div class="accent-bar" id="accentBar"></div>
+      <div class="category-badge" id="catBadge">
+        <span class="status-dot"></span>
+        <span>MULTIPATH INTERFERENCE</span>
+      </div>
+      <h1 class="main-title" id="mainTitle">
+        TALL SKYSCRAPERS<br>
+        <span>BOUNCE & DELAY WAVES</span>
+      </h1>
+    </div>
+
+    <!-- Warning Panel -->
+    <div class="warning-panel" id="warnPanel">
+      <div class="warning-hdr">
+        <div class="warning-label">SIGNAL ATTENUATION</div>
+        <div class="warning-code">ERR_MULTIPATH_BOUNCE</div>
+      </div>
+      <div class="warning-desc">
+        Radio waves reflect off glass & concrete before reaching phone: <em>TIME DELAY SKEWED</em>
+      </div>
+    </div>
+
+    <!-- Multipath Pill -->
+    <div class="multipath-pill" id="multipathPill">
+      <div>DIRECT LINE-OF-SIGHT: <span>BLOCKED</span></div>
+      <div>PSEUDO-RANGE ERROR: <span>+48 METERS</span></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene5"] = tl;
+
+    // Slow push with slight lateral drift
+    tl.fromTo("#bgImg", 
+      { scale: 1.0, x: 0 }, 
+      { scale: 1.08, x: -15, duration: 6.36, ease: "none" }, 0
+    );
+
+    // Title reveal
+    tl.fromTo("#accentBar", { width: 0, opacity: 0 }, { width: 60, opacity: 1, duration: 0.35, ease: "power2.out" }, 0.1);
+    tl.fromTo("#catBadge", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }, 0.2);
+    tl.fromTo("#mainTitle", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 0.35);
+
+    // Warning panel pops in
+    tl.fromTo("#warnPanel", 
+      { y: 35, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 1.2
+    );
+
+    // Multipath info pill
+    tl.fromTo("#multipathPill", 
+      { y: 25, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 2.0
+    );
+  </script>
+</body>
+</html>

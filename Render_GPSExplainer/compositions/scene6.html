@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 6 — Jumping Location Marker</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('../assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #060913;
+      font-family: 'Oswald', -apple-system, sans-serif;
+    }
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: 50% 50%;
+    }
+    .vignette-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(8, 4, 12, 0.75) 100%);
+      pointer-events: none;
+    }
+
+    /* Top Left Title Group */
+    .title-group {
+      position: absolute;
+      top: 170px;
+      left: 70px;
+      right: 70px;
+      z-index: 20;
+    }
+    .accent-bar {
+      width: 60px;
+      height: 4px;
+      background: #ef4444;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.8);
+    }
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      background: rgba(30, 10, 15, 0.88);
+      border: 1px solid rgba(239, 68, 68, 0.6);
+      color: #ef4444;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ef4444;
+    }
+    .main-title {
+      font-size: 68px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+    }
+    .main-title span {
+      color: #ef4444;
+      text-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
+    }
+
+    /* Animated Jumping Reticle / Uncertainty Zone */
+    .jumping-marker {
+      position: absolute;
+      top: 960px;
+      left: 540px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 20;
+    }
+    .uncertainty-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      border: 2px dashed rgba(239, 68, 68, 0.8);
+      background: rgba(239, 68, 68, 0.12);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .location-dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      background: #ef4444;
+      border: 4px solid #ffffff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px #ef4444;
+    }
+
+    /* Lower Jump Alert Card */
+    .jump-card {
+      position: absolute;
+      top: 1140px;
+      left: 70px;
+      right: 70px;
+      padding: 20px 28px;
+      background: rgba(24, 10, 16, 0.92);
+      border: 1px solid rgba(239, 68, 68, 0.6);
+      border-left: 6px solid #ef4444;
+      border-radius: 8px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 20;
+    }
+    .jump-info-main {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+    .jump-info-main span {
+      color: #ef4444;
+    }
+    .jump-radius {
+      font-family: monospace;
+      font-size: 28px;
+      color: #ffb300;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" data-composition-id="scene6">
+    <img id="bgImg" class="bg-img" src="../assets/images/scene6_jumping_map.jpg" alt="Jumping Map Marker">
+    <div class="vignette-overlay"></div>
+
+    <!-- Title Group -->
+    <div class="title-group" id="titleGroup">
+      <div class="accent-bar" id="accentBar"></div>
+      <div class="category-badge" id="catBadge">
+        <span class="status-dot"></span>
+        <span>POSITIONAL DRIFT</span>
+      </div>
+      <h1 class="main-title" id="mainTitle">
+        WHY YOUR LOCATION<br>
+        <span>SOMETIMES JUMPS AROUND</span>
+      </h1>
+    </div>
+
+    <!-- Jumping Marker -->
+    <div class="jumping-marker" id="jumpingMarker">
+      <div class="uncertainty-circle" id="uncertaintyCircle"></div>
+      <div class="location-dot"></div>
+    </div>
+
+    <!-- Jump Card -->
+    <div class="jump-card" id="jumpCard">
+      <div class="jump-info-main">STATUS: <span>ERRATIC DRIFT</span></div>
+      <div class="jump-radius" id="jumpRadius">UNCERTAINTY: ±95M</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene6"] = tl;
+
+    // Quick camera punch
+    tl.fromTo("#bgImg", 
+      { scale: 1.0 }, 
+      { scale: 1.06, duration: 2.00, ease: "power1.out" }, 0
+    );
+
+    // Title reveal fast
+    tl.fromTo("#accentBar", { width: 0, opacity: 0 }, { width: 60, opacity: 1, duration: 0.25, ease: "power2.out" }, 0.05);
+    tl.fromTo("#catBadge", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: "back.out(1.5)" }, 0.1);
+    tl.fromTo("#mainTitle", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 0.2);
+
+    // Marker abrupt jumps
+    tl.to("#jumpingMarker", { x: -60, y: 40, duration: 0.1, ease: "rough({strength: 2, points: 5})" }, 0.4);
+    tl.to("#jumpingMarker", { x: 75, y: -50, duration: 0.12, ease: "power2.out" }, 0.7);
+    tl.to("#jumpingMarker", { x: -30, y: -20, duration: 0.15, ease: "power2.out" }, 1.1);
+
+    // Uncertainty circle expands
+    tl.fromTo("#uncertaintyCircle", 
+      { scale: 0.8, opacity: 0.5 }, 
+      { scale: 1.4, opacity: 1, duration: 0.6, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0.4
+    );
+
+    // Jump card reveal
+    tl.fromTo("#jumpCard", 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 0.35
+    );
+  </script>
+</body>
+</html>

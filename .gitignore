@@ -3,6 +3,8 @@ node_modules/
 
 # HyperFrames runtime caches, builds & locks
 .hyperframes/
+.thumbnails/
+.waveform-cache/
 snapshots/
 *.lock
 

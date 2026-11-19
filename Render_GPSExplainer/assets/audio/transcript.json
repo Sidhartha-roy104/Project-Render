@@ -1,0 +1,548 @@
+[
+  {
+    "text": "How",
+    "start": 0.29,
+    "end": 0.34,
+    "id": "w0"
+  },
+  {
+    "text": "does",
+    "start": 0.34,
+    "end": 0.67,
+    "id": "w1"
+  },
+  {
+    "text": "your",
+    "start": 0.99,
+    "end": 1.02,
+    "id": "w2"
+  },
+  {
+    "text": "phone",
+    "start": 1.09,
+    "end": 1.53,
+    "id": "w3"
+  },
+  {
+    "text": "know",
+    "start": 1.53,
+    "end": 1.9,
+    "id": "w4"
+  },
+  {
+    "text": "where",
+    "start": 1.91,
+    "end": 2.39,
+    "id": "w5"
+  },
+  {
+    "text": "you",
+    "start": 2.39,
+    "end": 2.68,
+    "id": "w6"
+  },
+  {
+    "text": "are?",
+    "start": 2.68,
+    "end": 3.54,
+    "id": "w7"
+  },
+  {
+    "text": "Ever",
+    "start": 3.54,
+    "end": 3.88,
+    "id": "w8"
+  },
+  {
+    "text": "wondered",
+    "start": 3.88,
+    "end": 4.17,
+    "id": "w9"
+  },
+  {
+    "text": "how",
+    "start": 4.17,
+    "end": 4.32,
+    "id": "w10"
+  },
+  {
+    "text": "your",
+    "start": 4.32,
+    "end": 4.33,
+    "id": "w11"
+  },
+  {
+    "text": "phone",
+    "start": 4.63,
+    "end": 4.79,
+    "id": "w12"
+  },
+  {
+    "text": "knows",
+    "start": 4.79,
+    "end": 5.03,
+    "id": "w13"
+  },
+  {
+    "text": "exactly",
+    "start": 5.04,
+    "end": 5.41,
+    "id": "w14"
+  },
+  {
+    "text": "where",
+    "start": 5.41,
+    "end": 5.67,
+    "id": "w15"
+  },
+  {
+    "text": "you",
+    "start": 5.68,
+    "end": 5.78,
+    "id": "w16"
+  },
+  {
+    "text": "are?",
+    "start": 5.83,
+    "end": 6.19,
+    "id": "w17"
+  },
+  {
+    "text": "It",
+    "start": 6.2,
+    "end": 6.33,
+    "id": "w18"
+  },
+  {
+    "text": "receives",
+    "start": 6.54,
+    "end": 6.87,
+    "id": "w19"
+  },
+  {
+    "text": "signals",
+    "start": 7.19,
+    "end": 7.34,
+    "id": "w20"
+  },
+  {
+    "text": "from",
+    "start": 7.34,
+    "end": 7.61,
+    "id": "w21"
+  },
+  {
+    "text": "satellites",
+    "start": 7.61,
+    "end": 8.29,
+    "id": "w22"
+  },
+  {
+    "text": "orbiting",
+    "start": 8.29,
+    "end": 8.83,
+    "id": "w23"
+  },
+  {
+    "text": "the",
+    "start": 8.83,
+    "end": 9.03,
+    "id": "w24"
+  },
+  {
+    "text": "earth.",
+    "start": 9.03,
+    "end": 9.46,
+    "id": "w25"
+  },
+  {
+    "text": "Your",
+    "start": 9.46,
+    "end": 9.8,
+    "id": "w26"
+  },
+  {
+    "text": "phone",
+    "start": 9.8,
+    "end": 9.93,
+    "id": "w27"
+  },
+  {
+    "text": "calculates",
+    "start": 10.01,
+    "end": 10.45,
+    "id": "w28"
+  },
+  {
+    "text": "how",
+    "start": 10.55,
+    "end": 10.6,
+    "id": "w29"
+  },
+  {
+    "text": "long",
+    "start": 10.6,
+    "end": 10.8,
+    "id": "w30"
+  },
+  {
+    "text": "those",
+    "start": 10.8,
+    "end": 11.01,
+    "id": "w31"
+  },
+  {
+    "text": "signals",
+    "start": 11.07,
+    "end": 11.43,
+    "id": "w32"
+  },
+  {
+    "text": "take",
+    "start": 11.43,
+    "end": 11.64,
+    "id": "w33"
+  },
+  {
+    "text": "to",
+    "start": 11.64,
+    "end": 11.7,
+    "id": "w34"
+  },
+  {
+    "text": "arrive",
+    "start": 11.75,
+    "end": 12.05,
+    "id": "w35"
+  },
+  {
+    "text": "from",
+    "start": 12.05,
+    "end": 12.25,
+    "id": "w36"
+  },
+  {
+    "text": "different",
+    "start": 12.25,
+    "end": 12.56,
+    "id": "w37"
+  },
+  {
+    "text": "satellites.",
+    "start": 13.03,
+    "end": 13.46,
+    "id": "w38"
+  },
+  {
+    "text": "By",
+    "start": 13.46,
+    "end": 13.59,
+    "id": "w39"
+  },
+  {
+    "text": "comparing",
+    "start": 13.8,
+    "end": 14.19,
+    "id": "w40"
+  },
+  {
+    "text": "the",
+    "start": 14.21,
+    "end": 14.32,
+    "id": "w41"
+  },
+  {
+    "text": "signals,",
+    "start": 14.55,
+    "end": 14.99,
+    "id": "w42"
+  },
+  {
+    "text": "it",
+    "start": 14.99,
+    "end": 15.01,
+    "id": "w43"
+  },
+  {
+    "text": "can",
+    "start": 15.13,
+    "end": 15.32,
+    "id": "w44"
+  },
+  {
+    "text": "estimate",
+    "start": 15.32,
+    "end": 15.85,
+    "id": "w45"
+  },
+  {
+    "text": "your",
+    "start": 15.85,
+    "end": 16.11,
+    "id": "w46"
+  },
+  {
+    "text": "location.",
+    "start": 16.11,
+    "end": 16.9,
+    "id": "w47"
+  },
+  {
+    "text": "This",
+    "start": 16.9,
+    "end": 17.89,
+    "id": "w48"
+  },
+  {
+    "text": "technology",
+    "start": 17.89,
+    "end": 18.01,
+    "id": "w49"
+  },
+  {
+    "text": "is",
+    "start": 18.01,
+    "end": 18.17,
+    "id": "w50"
+  },
+  {
+    "text": "called",
+    "start": 18.17,
+    "end": 18.64,
+    "id": "w51"
+  },
+  {
+    "text": "GPS.",
+    "start": 18.64,
+    "end": 19.14,
+    "id": "w52"
+  },
+  {
+    "text": "But",
+    "start": 19.14,
+    "end": 19.31,
+    "id": "w53"
+  },
+  {
+    "text": "still",
+    "start": 19.48,
+    "end": 19.59,
+    "id": "w54"
+  },
+  {
+    "text": "it",
+    "start": 19.59,
+    "end": 19.7,
+    "id": "w55"
+  },
+  {
+    "text": "catches",
+    "start": 19.7,
+    "end": 19.97,
+    "id": "w56"
+  },
+  {
+    "text": "you.",
+    "start": 20.23,
+    "end": 20.46,
+    "id": "w57"
+  },
+  {
+    "text": "Tall",
+    "start": 20.46,
+    "end": 20.8,
+    "id": "w58"
+  },
+  {
+    "text": "buildings,",
+    "start": 20.8,
+    "end": 21.44,
+    "id": "w59"
+  },
+  {
+    "text": "tunnels",
+    "start": 21.55,
+    "end": 21.89,
+    "id": "w60"
+  },
+  {
+    "text": "and",
+    "start": 21.89,
+    "end": 22.04,
+    "id": "w61"
+  },
+  {
+    "text": "other",
+    "start": 22.13,
+    "end": 22.4,
+    "id": "w62"
+  },
+  {
+    "text": "obstacles",
+    "start": 22.4,
+    "end": 22.99,
+    "id": "w63"
+  },
+  {
+    "text": "can",
+    "start": 22.99,
+    "end": 23.17,
+    "id": "w64"
+  },
+  {
+    "text": "weaken",
+    "start": 23.17,
+    "end": 23.4,
+    "id": "w65"
+  },
+  {
+    "text": "signals,",
+    "start": 24.02,
+    "end": 24.2,
+    "id": "w66"
+  },
+  {
+    "text": "which",
+    "start": 24.2,
+    "end": 24.49,
+    "id": "w67"
+  },
+  {
+    "text": "is",
+    "start": 24.49,
+    "end": 24.59,
+    "id": "w68"
+  },
+  {
+    "text": "why",
+    "start": 24.6,
+    "end": 24.77,
+    "id": "w69"
+  },
+  {
+    "text": "your",
+    "start": 24.77,
+    "end": 24.95,
+    "id": "w70"
+  },
+  {
+    "text": "location",
+    "start": 24.99,
+    "end": 25.49,
+    "id": "w71"
+  },
+  {
+    "text": "sometimes",
+    "start": 25.84,
+    "end": 26.28,
+    "id": "w72"
+  },
+  {
+    "text": "jumps",
+    "start": 26.59,
+    "end": 26.71,
+    "id": "w73"
+  },
+  {
+    "text": "around.",
+    "start": 26.71,
+    "end": 27.5,
+    "id": "w74"
+  },
+  {
+    "text": "Pretty",
+    "start": 27.84,
+    "end": 28.28,
+    "id": "w75"
+  },
+  {
+    "text": "amazing,",
+    "start": 28.59,
+    "end": 29.45,
+    "id": "w76"
+  },
+  {
+    "text": "right?",
+    "start": 29.45,
+    "end": 30.37,
+    "id": "w77"
+  },
+  {
+    "text": "Your",
+    "start": 30.47,
+    "end": 30.54,
+    "id": "w78"
+  },
+  {
+    "text": "phone",
+    "start": 30.54,
+    "end": 30.59,
+    "id": "w79"
+  },
+  {
+    "text": "can",
+    "start": 30.59,
+    "end": 30.62,
+    "id": "w80"
+  },
+  {
+    "text": "find",
+    "start": 30.62,
+    "end": 30.66,
+    "id": "w81"
+  },
+  {
+    "text": "you",
+    "start": 30.66,
+    "end": 30.68,
+    "id": "w82"
+  },
+  {
+    "text": "without",
+    "start": 30.69,
+    "end": 30.76,
+    "id": "w83"
+  },
+  {
+    "text": "having",
+    "start": 30.76,
+    "end": 30.82,
+    "id": "w84"
+  },
+  {
+    "text": "to",
+    "start": 30.82,
+    "end": 30.84,
+    "id": "w85"
+  },
+  {
+    "text": "tell",
+    "start": 30.84,
+    "end": 30.9,
+    "id": "w86"
+  },
+  {
+    "text": "it",
+    "start": 31.07,
+    "end": 31.5,
+    "id": "w87"
+  },
+  {
+    "text": "where",
+    "start": 31.5,
+    "end": 31.65,
+    "id": "w88"
+  },
+  {
+    "text": "you",
+    "start": 31.66,
+    "end": 31.75,
+    "id": "w89"
+  },
+  {
+    "text": "are.",
+    "start": 31.75,
+    "end": 31.96,
+    "id": "w90"
+  }
+]

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scene 1 - The Grey Box Mystery</title>
+  <style>
+    @font-face {
+      font-family: 'Oswald';
+      src: url('../assets/fonts/Oswald.ttf') format('truetype');
+      font-weight: 200 700;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #0a0b10;
+      font-family: 'Oswald', -apple-system, sans-serif;
+    }
+    .scene-container {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: 58% 62%;
+    }
+
+    /* Top-Left Safe Zone Title */
+    .title-group {
+      position: absolute;
+      top: 140px;
+      left: 70px;
+      z-index: 20;
+    }
+    .accent-bar {
+      width: 60px;
+      height: 4px;
+      background: #f59e0b;
+      margin-bottom: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+    }
+    .category-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #f59e0b;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .main-title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+    .main-title span {
+      color: #67e8f9;
+      text-shadow: 0 0 25px rgba(6, 182, 212, 0.9), 0 2px 10px rgba(0, 0, 0, 0.95);
+    }
+
+    /* Target Scanner on Cabinet */
+    .target-scanner {
+      position: absolute;
+      top: 1040px;
+      left: 560px;
+      width: 220px;
+      height: 220px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 15;
+    }
+    .scanner-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px dashed #06b6d4;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    }
+    .scanner-glow {
+      position: absolute;
+      inset: 20px;
+      border: 2px solid rgba(245, 158, 11, 0.8);
+      border-radius: 50%;
+    }
+    .target-tag {
+      position: absolute;
+      top: -48px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(6, 182, 212, 0.9);
+      color: #070d18;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 4px;
+      white-space: nowrap;
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <div class="scene-container" data-composition-id="scene1">
+    <img id="bgImage" class="bg-img" src="../assets/images/shot1.jpg" alt="Hyderabad Junction Cabinet">
+
+    <div class="title-group" id="titleGroup">
+      <div class="accent-bar" id="accentBar"></div>
+      <div class="category-badge" id="catBadge">JUNCTION MYSTERY</div>
+      <h1 class="main-title" id="mainTitle">WHAT'S <span>INSIDE?</span></h1>
+    </div>
+
+    <div class="target-scanner" id="scanner">
+      <div class="scanner-ring" id="scannerRing"></div>
+      <div class="scanner-glow" id="scannerGlow"></div>
+      <div class="target-tag" id="targetTag">SIGNAL CONTROLLER</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["scene1"] = tl;
+
+    // Camera slow cinematic push-in
+    tl.fromTo("#bgImage", 
+      { scale: 1.0, x: 0, y: 0 }, 
+      { scale: 1.10, x: -20, y: -25, duration: 4.84, ease: "none" }, 0
+    );
+
+    // Title reveal (0.0s - 1.5s)
+    tl.fromTo("#accentBar", { width: 0, opacity: 0 }, { width: 70, opacity: 1, duration: 0.4, ease: "power2.out" }, 0.2);
+    tl.fromTo("#catBadge", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.5)" }, 0.35);
+    tl.fromTo("#mainTitle", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 0.6);
+
+    // Scanner focus on Cabinet (sync with "grey metal box", ~2.2s)
+    tl.fromTo("#scanner", 
+      { scale: 0.4, opacity: 0 }, 
+      { scale: 1.0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 2.0
+    );
+    tl.to("#scannerRing", { rotation: 180, duration: 2.84, ease: "none" }, 2.0);
+    tl.fromTo("#scannerGlow", 
+      { scale: 0.85, opacity: 0.5 }, 
+      { scale: 1.15, opacity: 1, duration: 0.7, repeat: 3, yoyo: true, ease: "sine.inOut" }, 2.2
+    );
+  </script>
+</body>
+</html>
