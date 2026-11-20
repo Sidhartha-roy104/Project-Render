@@ -1,0 +1,764 @@
+[
+  {
+    "text": "Ever",
+    "start": 0.2,
+    "end": 0.25,
+    "id": "w0"
+  },
+  {
+    "text": "wondered",
+    "start": 0.25,
+    "end": 0.75,
+    "id": "w1"
+  },
+  {
+    "text": "how",
+    "start": 0.75,
+    "end": 0.93,
+    "id": "w2"
+  },
+  {
+    "text": "pressing",
+    "start": 0.93,
+    "end": 1.43,
+    "id": "w3"
+  },
+  {
+    "text": "a",
+    "start": 1.43,
+    "end": 1.49,
+    "id": "w4"
+  },
+  {
+    "text": "single",
+    "start": 1.49,
+    "end": 1.82,
+    "id": "w5"
+  },
+  {
+    "text": "key",
+    "start": 1.97,
+    "end": 2.08,
+    "id": "w6"
+  },
+  {
+    "text": "turns",
+    "start": 2.08,
+    "end": 2.4,
+    "id": "w7"
+  },
+  {
+    "text": "into",
+    "start": 2.4,
+    "end": 2.62,
+    "id": "w8"
+  },
+  {
+    "text": "a",
+    "start": 2.62,
+    "end": 2.68,
+    "id": "w9"
+  },
+  {
+    "text": "letter",
+    "start": 2.68,
+    "end": 3.04,
+    "id": "w10"
+  },
+  {
+    "text": "on",
+    "start": 3.04,
+    "end": 3.13,
+    "id": "w11"
+  },
+  {
+    "text": "your",
+    "start": 3.13,
+    "end": 3.31,
+    "id": "w12"
+  },
+  {
+    "text": "screen",
+    "start": 3.32,
+    "end": 3.61,
+    "id": "w13"
+  },
+  {
+    "text": "in",
+    "start": 3.61,
+    "end": 3.7,
+    "id": "w14"
+  },
+  {
+    "text": "milliseconds?",
+    "start": 3.7,
+    "end": 4.47,
+    "id": "w15"
+  },
+  {
+    "text": "Underneath",
+    "start": 4.47,
+    "end": 5.72,
+    "id": "w16"
+  },
+  {
+    "text": "every",
+    "start": 5.72,
+    "end": 5.92,
+    "id": "w17"
+  },
+  {
+    "text": "keycap",
+    "start": 5.92,
+    "end": 6.46,
+    "id": "w18"
+  },
+  {
+    "text": "sits",
+    "start": 6.56,
+    "end": 6.86,
+    "id": "w19"
+  },
+  {
+    "text": "a",
+    "start": 6.86,
+    "end": 6.94,
+    "id": "w20"
+  },
+  {
+    "text": "switch,",
+    "start": 6.95,
+    "end": 7.72,
+    "id": "w21"
+  },
+  {
+    "text": "either",
+    "start": 7.76,
+    "end": 8.12,
+    "id": "w22"
+  },
+  {
+    "text": "a",
+    "start": 8.12,
+    "end": 8.16,
+    "id": "w23"
+  },
+  {
+    "text": "rubber",
+    "start": 8.2,
+    "end": 8.54,
+    "id": "w24"
+  },
+  {
+    "text": "dome",
+    "start": 8.54,
+    "end": 8.8,
+    "id": "w25"
+  },
+  {
+    "text": "or",
+    "start": 8.8,
+    "end": 8.99,
+    "id": "w26"
+  },
+  {
+    "text": "a",
+    "start": 9.08,
+    "end": 9.09,
+    "id": "w27"
+  },
+  {
+    "text": "mechanical",
+    "start": 9.09,
+    "end": 9.68,
+    "id": "w28"
+  },
+  {
+    "text": "spring,",
+    "start": 9.68,
+    "end": 10.32,
+    "id": "w29"
+  },
+  {
+    "text": "waiting",
+    "start": 10.52,
+    "end": 10.67,
+    "id": "w30"
+  },
+  {
+    "text": "to",
+    "start": 10.67,
+    "end": 10.77,
+    "id": "w31"
+  },
+  {
+    "text": "close",
+    "start": 10.77,
+    "end": 11.02,
+    "id": "w32"
+  },
+  {
+    "text": "an",
+    "start": 11.02,
+    "end": 11.09,
+    "id": "w33"
+  },
+  {
+    "text": "electrical",
+    "start": 11.16,
+    "end": 11.63,
+    "id": "w34"
+  },
+  {
+    "text": "circuit.",
+    "start": 11.63,
+    "end": 12.14,
+    "id": "w35"
+  },
+  {
+    "text": "But",
+    "start": 12.14,
+    "end": 12.507,
+    "id": "w36"
+  },
+  {
+    "text": "wiring",
+    "start": 12.507,
+    "end": 12.873,
+    "id": "w37"
+  },
+  {
+    "text": "a",
+    "start": 12.873,
+    "end": 13.24,
+    "id": "w38"
+  },
+  {
+    "text": "hundred",
+    "start": 13.24,
+    "end": 13.38,
+    "id": "w39"
+  },
+  {
+    "text": "keys",
+    "start": 13.38,
+    "end": 13.67,
+    "id": "w40"
+  },
+  {
+    "text": "individually",
+    "start": 13.67,
+    "end": 14.54,
+    "id": "w41"
+  },
+  {
+    "text": "would",
+    "start": 14.54,
+    "end": 14.86,
+    "id": "w42"
+  },
+  {
+    "text": "create",
+    "start": 15.01,
+    "end": 15.33,
+    "id": "w43"
+  },
+  {
+    "text": "a",
+    "start": 15.33,
+    "end": 15.4,
+    "id": "w44"
+  },
+  {
+    "text": "tangled",
+    "start": 15.4,
+    "end": 15.9,
+    "id": "w45"
+  },
+  {
+    "text": "mess.",
+    "start": 15.91,
+    "end": 16.48,
+    "id": "w46"
+  },
+  {
+    "text": "Instead,",
+    "start": 16.48,
+    "end": 17.8,
+    "id": "w47"
+  },
+  {
+    "text": "keyboards",
+    "start": 17.8,
+    "end": 17.95,
+    "id": "w48"
+  },
+  {
+    "text": "use",
+    "start": 17.95,
+    "end": 18.19,
+    "id": "w49"
+  },
+  {
+    "text": "a",
+    "start": 18.19,
+    "end": 18.25,
+    "id": "w50"
+  },
+  {
+    "text": "grid",
+    "start": 18.27,
+    "end": 18.53,
+    "id": "w51"
+  },
+  {
+    "text": "of",
+    "start": 18.64,
+    "end": 18.75,
+    "id": "w52"
+  },
+  {
+    "text": "crossing",
+    "start": 18.75,
+    "end": 19.4,
+    "id": "w53"
+  },
+  {
+    "text": "rows",
+    "start": 19.4,
+    "end": 19.69,
+    "id": "w54"
+  },
+  {
+    "text": "and",
+    "start": 19.76,
+    "end": 19.96,
+    "id": "w55"
+  },
+  {
+    "text": "columns",
+    "start": 19.96,
+    "end": 20.53,
+    "id": "w56"
+  },
+  {
+    "text": "called",
+    "start": 20.53,
+    "end": 21.02,
+    "id": "w57"
+  },
+  {
+    "text": "a",
+    "start": 21.02,
+    "end": 21.07,
+    "id": "w58"
+  },
+  {
+    "text": "key",
+    "start": 21.16,
+    "end": 21.34,
+    "id": "w59"
+  },
+  {
+    "text": "matrix.",
+    "start": 21.34,
+    "end": 22.16,
+    "id": "w60"
+  },
+  {
+    "text": "When",
+    "start": 22.16,
+    "end": 22.45,
+    "id": "w61"
+  },
+  {
+    "text": "you",
+    "start": 22.45,
+    "end": 22.74,
+    "id": "w62"
+  },
+  {
+    "text": "press",
+    "start": 22.74,
+    "end": 23.03,
+    "id": "w63"
+  },
+  {
+    "text": "a",
+    "start": 23.03,
+    "end": 23.32,
+    "id": "w64"
+  },
+  {
+    "text": "key,",
+    "start": 23.32,
+    "end": 23.72,
+    "id": "w65"
+  },
+  {
+    "text": "it",
+    "start": 23.72,
+    "end": 23.88,
+    "id": "w66"
+  },
+  {
+    "text": "connects",
+    "start": 23.89,
+    "end": 24.59,
+    "id": "w67"
+  },
+  {
+    "text": "one",
+    "start": 24.59,
+    "end": 24.84,
+    "id": "w68"
+  },
+  {
+    "text": "specific",
+    "start": 24.85,
+    "end": 25.55,
+    "id": "w69"
+  },
+  {
+    "text": "row",
+    "start": 25.55,
+    "end": 25.81,
+    "id": "w70"
+  },
+  {
+    "text": "to",
+    "start": 25.81,
+    "end": 25.97,
+    "id": "w71"
+  },
+  {
+    "text": "one",
+    "start": 25.98,
+    "end": 26.24,
+    "id": "w72"
+  },
+  {
+    "text": "specific",
+    "start": 26.24,
+    "end": 27.04,
+    "id": "w73"
+  },
+  {
+    "text": "column.",
+    "start": 27.04,
+    "end": 27.36,
+    "id": "w74"
+  },
+  {
+    "text": "A",
+    "start": 27.36,
+    "end": 28.52,
+    "id": "w75"
+  },
+  {
+    "text": "tiny",
+    "start": 28.52,
+    "end": 28.68,
+    "id": "w76"
+  },
+  {
+    "text": "microcontroller",
+    "start": 28.68,
+    "end": 29.79,
+    "id": "w77"
+  },
+  {
+    "text": "constantly",
+    "start": 29.79,
+    "end": 30.52,
+    "id": "w78"
+  },
+  {
+    "text": "scans",
+    "start": 30.56,
+    "end": 30.9,
+    "id": "w79"
+  },
+  {
+    "text": "this",
+    "start": 30.9,
+    "end": 31.18,
+    "id": "w80"
+  },
+  {
+    "text": "grid,",
+    "start": 31.19,
+    "end": 31.62,
+    "id": "w81"
+  },
+  {
+    "text": "detects",
+    "start": 31.62,
+    "end": 31.99,
+    "id": "w82"
+  },
+  {
+    "text": "the",
+    "start": 31.99,
+    "end": 32.16,
+    "id": "w83"
+  },
+  {
+    "text": "exact",
+    "start": 32.16,
+    "end": 32.61,
+    "id": "w84"
+  },
+  {
+    "text": "coordinate,",
+    "start": 32.66,
+    "end": 33.28,
+    "id": "w85"
+  },
+  {
+    "text": "and",
+    "start": 33.28,
+    "end": 33.48,
+    "id": "w86"
+  },
+  {
+    "text": "translates",
+    "start": 33.48,
+    "end": 34.04,
+    "id": "w87"
+  },
+  {
+    "text": "it",
+    "start": 34.11,
+    "end": 34.21,
+    "id": "w88"
+  },
+  {
+    "text": "into",
+    "start": 34.32,
+    "end": 34.47,
+    "id": "w89"
+  },
+  {
+    "text": "a",
+    "start": 34.47,
+    "end": 34.52,
+    "id": "w90"
+  },
+  {
+    "text": "standard",
+    "start": 34.52,
+    "end": 35.03,
+    "id": "w91"
+  },
+  {
+    "text": "scan",
+    "start": 35.03,
+    "end": 35.28,
+    "id": "w92"
+  },
+  {
+    "text": "code.",
+    "start": 35.28,
+    "end": 35.76,
+    "id": "w93"
+  },
+  {
+    "text": "That",
+    "start": 35.76,
+    "end": 36.34,
+    "id": "w94"
+  },
+  {
+    "text": "code",
+    "start": 36.34,
+    "end": 36.92,
+    "id": "w95"
+  },
+  {
+    "text": "travels",
+    "start": 36.92,
+    "end": 37.42,
+    "id": "w96"
+  },
+  {
+    "text": "over",
+    "start": 37.42,
+    "end": 37.86,
+    "id": "w97"
+  },
+  {
+    "text": "USB",
+    "start": 37.86,
+    "end": 38.19,
+    "id": "w98"
+  },
+  {
+    "text": "or",
+    "start": 38.19,
+    "end": 38.41,
+    "id": "w99"
+  },
+  {
+    "text": "Bluetooth",
+    "start": 38.41,
+    "end": 39.44,
+    "id": "w100"
+  },
+  {
+    "text": "as",
+    "start": 39.44,
+    "end": 39.54,
+    "id": "w101"
+  },
+  {
+    "text": "a",
+    "start": 39.54,
+    "end": 39.6,
+    "id": "w102"
+  },
+  {
+    "text": "data",
+    "start": 39.6,
+    "end": 39.92,
+    "id": "w103"
+  },
+  {
+    "text": "packet,",
+    "start": 39.92,
+    "end": 40.56,
+    "id": "w104"
+  },
+  {
+    "text": "telling",
+    "start": 40.76,
+    "end": 40.91,
+    "id": "w105"
+  },
+  {
+    "text": "your",
+    "start": 40.91,
+    "end": 41.11,
+    "id": "w106"
+  },
+  {
+    "text": "operating",
+    "start": 41.11,
+    "end": 41.49,
+    "id": "w107"
+  },
+  {
+    "text": "system",
+    "start": 41.6,
+    "end": 41.86,
+    "id": "w108"
+  },
+  {
+    "text": "which",
+    "start": 41.86,
+    "end": 42.11,
+    "id": "w109"
+  },
+  {
+    "text": "character",
+    "start": 42.11,
+    "end": 42.56,
+    "id": "w110"
+  },
+  {
+    "text": "to",
+    "start": 42.56,
+    "end": 42.65,
+    "id": "w111"
+  },
+  {
+    "text": "draw.",
+    "start": 42.72,
+    "end": 43.04,
+    "id": "w112"
+  },
+  {
+    "text": "Which",
+    "start": 43.04,
+    "end": 43.427,
+    "id": "w113"
+  },
+  {
+    "text": "type",
+    "start": 43.427,
+    "end": 43.813,
+    "id": "w114"
+  },
+  {
+    "text": "of",
+    "start": 43.813,
+    "end": 44.2,
+    "id": "w115"
+  },
+  {
+    "text": "keyboard",
+    "start": 44.2,
+    "end": 44.77,
+    "id": "w116"
+  },
+  {
+    "text": "do",
+    "start": 44.83,
+    "end": 44.94,
+    "id": "w117"
+  },
+  {
+    "text": "you",
+    "start": 45.04,
+    "end": 45.3,
+    "id": "w118"
+  },
+  {
+    "text": "prefer,",
+    "start": 45.3,
+    "end": 46.08,
+    "id": "w119"
+  },
+  {
+    "text": "clicky",
+    "start": 46.08,
+    "end": 46.44,
+    "id": "w120"
+  },
+  {
+    "text": "mechanical",
+    "start": 46.44,
+    "end": 47.05,
+    "id": "w121"
+  },
+  {
+    "text": "or",
+    "start": 47.05,
+    "end": 47.16,
+    "id": "w122"
+  },
+  {
+    "text": "quiet",
+    "start": 47.17,
+    "end": 47.47,
+    "id": "w123"
+  },
+  {
+    "text": "membrane?",
+    "start": 47.47,
+    "end": 48.16,
+    "id": "w124"
+  },
+  {
+    "text": "Comment",
+    "start": 48.16,
+    "end": 49.32,
+    "id": "w125"
+  },
+  {
+    "text": "below!",
+    "start": 49.32,
+    "end": 53.71,
+    "id": "w126"
+  }
+]

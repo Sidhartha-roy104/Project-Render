@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 7 — USB Data Packet</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .photo-card {
+    position: absolute;
+    width: 880px;
+    height: 740px;
+    top: 340px;
+    left: 100px;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .illustrative-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(26,26,26,0.85);
+    color: #FFF;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    z-index: 15;
+  }
+
+  .packet-banner {
+    position: absolute;
+    top: 1110px;
+    left: 100px;
+    right: 100px;
+    background: #FFF;
+    border: 3px solid #66CFFF;
+    border-radius: 18px;
+    padding: 20px 28px;
+    z-index: 28;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+  .packet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .packet-title {
+    font-family: monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: #3E87A8;
+  }
+  .packet-badge {
+    background: #E2F8E8;
+    color: #1C7C38;
+    border: 1px solid #B4EDC5;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .packet-bytes {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .byte-box {
+    background: #F0F2F5;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #DCE0E5;
+    color: #333;
+  }
+  .byte-active {
+    background: #FFE619;
+    color: #1A1A1A;
+    border-color: #E6CE00;
+    box-shadow: 0 4px 12px rgba(255,230,25,0.4);
+  }
+
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 28px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene7" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">OUTPUT TO HOST</div>
+    <div class="headline-main">USB <span class="headline-yellow">DATA PACKET</span></div>
+  </div>
+
+  <div class="photo-card" id="card">
+    <span class="illustrative-tag">[ILLUSTRATIVE]</span>
+    <img src="../assets/images/shot7_usb_packet.jpg" alt="Data pulse traveling in USB cable">
+  </div>
+
+  <div class="packet-banner" id="packetBanner">
+    <div class="packet-header">
+      <span class="packet-title">USB-HID DATA PACKET [8 BYTES]:</span>
+      <span class="packet-badge">DELIVERED &lt;1ms</span>
+    </div>
+    <div class="packet-bytes">
+      <div class="byte-box">0x00</div>
+      <div class="byte-box">0x00</div>
+      <div class="byte-box byte-active" id="activeByte">0x04 ['A']</div>
+      <div class="byte-box">0x00</div>
+      <div class="byte-box">0x00</div>
+    </div>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "That code travels over USB or Bluetooth as a <span class="hl">data packet</span>, telling your operating system which character to draw."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene7"] = tl;
+
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
+  tl.fromTo("#card", { scale: 0.92, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.25);
+  tl.fromTo("#packetBanner", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 0.5);
+
+  // Animate the active keycode byte packet pulse (~3.5s)
+  tl.fromTo("#activeByte", 
+    { scale: 0.9 }, 
+    { scale: 1.2, repeat: 3, yoyo: true, duration: 0.35, ease: "power2.inOut" }, 3.2
+  );
+
+  tl.to("#card", { scale: 1.06, duration: 6.5, ease: "none" }, 0.85);
+</script>
+</body>
+</html>

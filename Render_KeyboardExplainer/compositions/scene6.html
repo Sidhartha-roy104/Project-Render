@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 6 — The Tiny Controller</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .photo-card {
+    position: absolute;
+    width: 760px;
+    height: 640px;
+    top: 340px;
+    left: 160px;
+    background: #FFF;
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .source-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(26,26,26,0.85);
+    color: #EEE;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    z-index: 15;
+  }
+
+  .mcu-register-box {
+    position: absolute;
+    top: 1020px;
+    left: 100px;
+    right: 100px;
+    background: #1A1A1A;
+    color: #FFF;
+    border-radius: 18px;
+    padding: 24px 32px;
+    font-family: monospace;
+    z-index: 28;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    border: 2px solid #333;
+  }
+  .reg-line {
+    margin-bottom: 8px;
+  }
+  .reg-title { font-size: 20px; color: #888; }
+  .reg-detected { font-size: 26px; font-weight: 700; color: #FFE619; }
+  .reg-scancode { font-size: 28px; font-weight: 800; color: #66CFFF; }
+
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 28px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene6" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">SIGNAL TRANSLATION</div>
+    <div class="headline-main">THE TINY <span class="headline-yellow">CONTROLLER</span></div>
+  </div>
+
+  <div class="photo-card" id="card">
+    <img src="../assets/images/real_microcontroller.jpg" alt="Microcontroller IC chip">
+    <span class="source-tag">COMMONS / PIC18F MCU</span>
+  </div>
+
+  <div class="mcu-register-box" id="registerBox">
+    <div class="reg-line reg-title">&gt; MATRIX SCAN ENGINE (1000 Hz POLLING)</div>
+    <div class="reg-line reg-detected" id="lineDetected">&gt; DETECTED: ROW 03 | COL 04</div>
+    <div class="reg-line reg-scancode" id="lineCode">&gt; TRANSLATE ➔ SCAN CODE: 0x04 (KEY 'A')</div>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "A tiny microcontroller constantly scans this grid, detects the exact coordinate, and translates it into a <span class="hl">standard scan code</span>."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene6"] = tl;
+
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
+  tl.fromTo("#card", { scale: 0.9, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.25);
+  tl.fromTo("#registerBox", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 0.5);
+
+  // Staged register animation as microcontroller reads coordinate (~2.8s) and translates scan code (~5.2s)
+  tl.fromTo("#lineDetected", { opacity: 0.3 }, { opacity: 1, duration: 0.3, repeat: 2, yoyo: true }, 2.8);
+  tl.fromTo("#lineCode", { scale: 0.9, color: "#FFFFFF" }, { scale: 1.05, color: "#66CFFF", duration: 0.45, ease: "power2.out" }, 5.2);
+
+  // Micro-drift
+  tl.to("#card", { y: -10, duration: 7.5, ease: "none" }, 0.5);
+</script>
+</body>
+</html>

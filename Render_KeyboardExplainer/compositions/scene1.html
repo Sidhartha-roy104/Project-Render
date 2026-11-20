@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 1 — How a Keypress Works</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .brand-circle {
+    position: absolute;
+    width: 640px;
+    height: 640px;
+    top: 440px;
+    left: 220px;
+    border-radius: 50%;
+    background: #FFE619;
+    z-index: 2;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+  .photo-card {
+    position: absolute;
+    width: 720px;
+    height: 760px;
+    top: 360px;
+    left: 180px;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.06);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+  }
+  .photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .illustrative-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(26,26,26,0.85);
+    color: #FFF;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    z-index: 15;
+  }
+  .editorial-pill {
+    position: absolute;
+    top: 1140px;
+    left: 140px;
+    background: #66CFFF;
+    color: #1A1A1A;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 25;
+  }
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 30px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene1" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+  <div class="brand-circle" id="circle"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">EXPLAINER SPECIMEN 01</div>
+    <div class="headline-main">HOW A <span class="headline-yellow">KEYPRESS</span> WORKS</div>
+  </div>
+
+  <div class="photo-card" id="card">
+    <span class="illustrative-tag">[ILLUSTRATIVE]</span>
+    <img src="../assets/images/shot1_keycap_press.jpg" alt="Keycap hovering over switch">
+  </div>
+
+  <div class="editorial-pill" id="pill">
+    <span>⚡ RESPONSE TIME: &lt; 5 MILLISECONDS</span>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "Ever wondered how pressing a <span class="hl">single key</span> turns into a letter on your screen in milliseconds?"
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene1"] = tl;
+
+  // Staged entrance (0.0s - 0.8s)
+  tl.fromTo("#circle", 
+    { scale: 0.3, opacity: 0 }, 
+    { scale: 1.0, opacity: 1, duration: 0.65, ease: "back.out(1.7)" }, 0.05
+  );
+  tl.fromTo("#headline", 
+    { y: -40, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.2
+  );
+  tl.fromTo("#card", 
+    { y: 60, scale: 0.92, rotation: -4, opacity: 0 }, 
+    { y: 0, scale: 1.0, rotation: -2, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.3
+  );
+  tl.fromTo("#pill", 
+    { x: -50, opacity: 0 }, 
+    { x: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 0.9
+  );
+
+  // Staged highlight pulse at 3.0s (maintains event density <= 2.2s)
+  tl.to("#pill", { scale: 1.08, repeat: 1, yoyo: true, duration: 0.3, ease: "power1.inOut" }, 3.0);
+
+  // Subtle continuous push-in (Technique: Motion continuity through cut)
+  tl.to("#card", { scale: 1.04, duration: 4.3, ease: "none" }, 1.0);
+  tl.to("#circle", { scale: 1.06, duration: 4.3, ease: "none" }, 1.0);
+
+  // Transition out to Beat 2 (seam velocity match)
+  tl.to("#root", { opacity: 0.95, duration: 0.2, ease: "power1.in" }, 5.3);
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 2 — Under the Keycap</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .panel-left {
+    position: absolute;
+    top: 340px;
+    left: 60px;
+    width: 460px;
+    height: 840px;
+    background: #F4F5F7;
+    border-radius: 24px;
+    padding: 24px;
+    border: 2px solid #E2E4E8;
+    z-index: 10;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  }
+  .panel-right {
+    position: absolute;
+    top: 340px;
+    right: 60px;
+    width: 460px;
+    height: 840px;
+    background: #F4F5F7;
+    border-radius: 24px;
+    padding: 24px;
+    border: 2px solid #E2E4E8;
+    z-index: 10;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  }
+
+  .panel-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+  .img-slot {
+    width: 100%;
+    height: 380px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    background: #E2E5E9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .source-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(26,26,26,0.8);
+    color: #EEE;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .panel-desc {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #444;
+    line-height: 1.45;
+  }
+  .panel-badge {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .editorial-pill {
+    position: absolute;
+    top: 1210px;
+    left: 280px;
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 25;
+  }
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 28px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene2" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">MECHANISM COMPARISON</div>
+    <div class="headline-main">UNDER THE <span class="headline-yellow">KEYCAP</span></div>
+  </div>
+
+  <!-- Left: Rubber Dome -->
+  <div class="panel-left" id="panelLeft">
+    <div class="panel-title">01. RUBBER DOME</div>
+    <div class="img-slot">
+      <svg width="240" height="240" viewBox="0 0 100 100" style="fill:none; stroke:#4A5568; stroke-width:3;">
+        <path d="M 15 80 Q 15 35, 50 30 Q 85 35, 85 80" fill="#CBD5E0" stroke="#4A5568"/>
+        <circle cx="50" cy="35" r="7" fill="#1A1A1A"/>
+        <line x1="10" y1="80" x2="90" y2="80" stroke="#1A1A1A" stroke-width="5"/>
+      </svg>
+      <span class="source-tag">SILICONE MEMBRANE</span>
+    </div>
+    <div class="panel-desc">
+      Flexible silicone dome snaps downward to bridge carbon traces.
+    </div>
+    <span class="panel-badge" style="background:#EBF7FC; color:#3E87A8;">QUIET & LOW COST</span>
+  </div>
+
+  <!-- Right: Mechanical Switch -->
+  <div class="panel-right" id="panelRight">
+    <div class="panel-title">02. MECHANICAL</div>
+    <div class="img-slot" style="border: 2px solid #D0D0D0;">
+      <img src="../assets/images/real_mechanical_switch.jpg" alt="Mechanical switch cross-section">
+      <span class="source-tag">COMMONS / CHERRY MX</span>
+      <div id="contactHighlight" style="position:absolute; top:150px; left:210px; width:44px; height:44px; border:3px solid #FFE619; border-radius:50%; background:rgba(255,230,25,0.4);"></div>
+    </div>
+    <div class="panel-desc">
+      Individual metal spring drives gold crosspoint contacts together.
+    </div>
+    <span class="panel-badge" style="background:#FEFCBF; color:#B7791F;">PHYSICAL SPRING</span>
+  </div>
+
+  <div class="editorial-pill" id="pill">
+    <span>WAITING TO CLOSE CIRCUIT</span>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "Underneath every keycap sits a <span class="hl">switch</span>—either a rubber dome or a mechanical spring—waiting to close an electrical circuit."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene2"] = tl;
+
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
+  tl.fromTo("#panelLeft", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.25);
+  tl.fromTo("#panelRight", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.4);
+
+  // Staged silicone dome pulse at 2.2s (maintains event density <= 2.0s)
+  tl.to("#panelLeft .img-slot", { scale: 1.04, yoyo: true, repeat: 1, duration: 0.4, ease: "power2.inOut" }, 2.2);
+
+  // Pulse gold contact highlight when narration says "close an electrical circuit" (~4.5s)
+  tl.fromTo("#contactHighlight", 
+    { scale: 0.8, opacity: 0 }, 
+    { scale: 1.3, opacity: 1, duration: 0.5, repeat: 3, yoyo: true, ease: "power2.inOut" }, 4.2
+  );
+  tl.fromTo("#pill", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.5)" }, 4.8);
+
+  // Continuous camera drift
+  tl.to(["#panelLeft", "#panelRight"], { y: -15, duration: 7.0, ease: "none" }, 0.5);
+</script>
+</body>
+</html>

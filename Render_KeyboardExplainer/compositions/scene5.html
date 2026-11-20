@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 5 — Bridging Row & Column</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .photo-card {
+    position: absolute;
+    width: 880px;
+    height: 840px;
+    top: 340px;
+    left: 100px;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.16);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+  }
+  .photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .illustrative-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(26,26,26,0.85);
+    color: #FFF;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    z-index: 15;
+  }
+
+  /* Target Reticle (Zoom-Isolation Technique) */
+  .target-reticle {
+    position: absolute;
+    top: 660px;
+    left: 420px;
+    width: 180px;
+    height: 180px;
+    border: 6px solid #FFE619;
+    border-radius: 50%;
+    z-index: 25;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0.4), inset 0 0 32px rgba(255, 230, 25, 0.45);
+    pointer-events: none;
+  }
+  .target-reticle::before, .target-reticle::after {
+    content: '';
+    position: absolute;
+    background: #FFE619;
+  }
+  .target-reticle::before { top: 87px; left: -26px; width: 232px; height: 4px; }
+  .target-reticle::after { left: 87px; top: -26px; height: 232px; width: 4px; }
+
+  .editorial-pill {
+    position: absolute;
+    top: 1210px;
+    left: 220px;
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 25;
+  }
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 30px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene5" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">CIRCUIT JUNCTION</div>
+    <div class="headline-main">BRIDGING <span class="headline-yellow">ROW &amp; COLUMN</span></div>
+  </div>
+
+  <div class="photo-card" id="card">
+    <span class="illustrative-tag">[ILLUSTRATIVE]</span>
+    <img src="../assets/images/shot5_circuit_cross.jpg" alt="Orthogonal circuit junction">
+  </div>
+
+  <div class="target-reticle" id="reticle"></div>
+
+  <div class="editorial-pill" id="pill">
+    <span>🎯 TARGET: ROW 3 ✕ COL 4 LOCKED</span>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "When you press a key, it connects one <span class="hl">specific row</span> to one specific column."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene5"] = tl;
+
+  // Zoom-isolation arrival: starts from pushed-in scale matching Beat 4 exit
+  tl.fromTo("#card", 
+    { scale: 1.15, opacity: 0 }, 
+    { scale: 1.0, opacity: 1, duration: 0.6, ease: "power2.out" }, 0.05
+  );
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.15);
+
+  // Reticle locks onto contact junction (~1.5s - 2.5s)
+  tl.fromTo("#reticle", 
+    { scale: 2.2, opacity: 0, rotation: 45 }, 
+    { scale: 1.0, opacity: 1, rotation: 0, duration: 0.65, ease: "back.out(1.5)" }, 1.2
+  );
+  tl.fromTo("#pill", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 2.0);
+
+  // Spark pulse on locked junction
+  tl.to("#reticle", { scale: 1.15, yoyo: true, repeat: 3, duration: 0.35, ease: "power1.inOut" }, 2.6);
+</script>
+</body>
+</html>

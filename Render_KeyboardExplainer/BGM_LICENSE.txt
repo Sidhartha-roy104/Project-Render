@@ -1,0 +1,9 @@
+Track: "Inspired"
+Composer: Kevin MacLeod (incompetech.com)
+Source: https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600022
+License: Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+Commercial Use: Permitted with attribution
+Vocals: None (Instrumental)
+Duration: 286 seconds (>= 55 seconds)
+File: assets/audio/bgm.mp3

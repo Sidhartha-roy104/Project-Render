@@ -1,0 +1,36 @@
+1
+00:00:00,100 --> 00:00:05,512
+Ever wondered how pressing a single key turns into a letter on your screen in milliseconds?
+
+2
+00:00:05,462 --> 00:00:13,087
+Underneath every keycap sits a switch—either a rubber dome or a mechanical spring—waiting to close an electrical circuit.
+
+3
+00:00:13,087 --> 00:00:17,537
+But wiring a hundred keys individually would create a tangled mess.
+
+4
+00:00:17,537 --> 00:00:23,125
+Instead, keyboards use a grid of crossing rows and columns called a key matrix.
+
+5
+00:00:23,125 --> 00:00:28,325
+When you press a key, it connects one specific row to one specific column.
+
+6
+00:00:28,325 --> 00:00:36,675
+A tiny microcontroller constantly scans this grid, detects the exact coordinate, and translates it into a standard scan code.
+
+7
+00:00:36,675 --> 00:00:44,000
+That code travels over USB or Bluetooth as a data packet, telling your operating system which character to draw.
+
+8
+00:00:44,000 --> 00:00:49,050
+Which type of keyboard do you prefer—clicky mechanical or quiet membrane?
+
+9
+00:00:49,050 --> 00:00:50,837
+Comment below.
+

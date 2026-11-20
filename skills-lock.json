@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "vox-explainer": {
+      "source": "heygen-com/hyperframes-community-skills",
+      "sourceType": "github",
+      "skillPath": "skills/vox-explainer/SKILL.md",
+      "computedHash": "3231a094ddcc61c8b6e85b34f5573bd1a6e233168c20fdde74c8eab66ed24f5a"
+    }
+  }
+}

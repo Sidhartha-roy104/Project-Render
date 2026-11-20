@@ -1,0 +1,9 @@
+{
+  "name": "render-keyboard-explainer",
+  "version": "1.0.0",
+  "description": "How a Keyboard Keypress Actually Works - Vox-style Explainer",
+  "dependencies": {},
+  "devDependencies": {
+    "hyperframes": "^0.9.70"
+  }
+}

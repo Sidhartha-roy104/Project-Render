@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How a Keyboard Works — Vox Style Short</title>
+  <style>
+    @font-face {
+      font-family: 'Archivo Black';
+      src: url('assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('assets/fonts/Inter.ttf') format('truetype');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #FBFAF8;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    #root {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      overflow: hidden;
+      background: #FBFAF8;
+    }
+    .clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+
+    /* Subtle Paper Texture & Border Frame */
+    #editorialOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      pointer-events: none;
+      z-index: 100;
+      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+  <script src="assets/js/gsap.min.js"></script>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-width="1080" data-height="1920">
+    <!-- Master Audio Track (-14 LUFS integrated, sidechain ducked BGM + VO) -->
+    <audio id="master-audio" src="assets/audio/audio_final.mp3" data-start="0" data-duration="51.00"></audio>
+
+    <!-- 8 Modular Compositions (Synchronized with speech transcript) -->
+    <div id="scene1-host" class="clip" data-composition-id="scene1" data-composition-src="compositions/scene1.html" data-start="0.00" data-duration="5.50"></div>
+    <div id="scene2-host" class="clip" data-composition-id="scene2" data-composition-src="compositions/scene2.html" data-start="5.50" data-duration="7.60"></div>
+    <div id="scene3-host" class="clip" data-composition-id="scene3" data-composition-src="compositions/scene3.html" data-start="13.10" data-duration="4.45"></div>
+    <div id="scene4-host" class="clip" data-composition-id="scene4" data-composition-src="compositions/scene4.html" data-start="17.55" data-duration="5.60"></div>
+    <div id="scene5-host" class="clip" data-composition-id="scene5" data-composition-src="compositions/scene5.html" data-start="23.15" data-duration="5.20"></div>
+    <div id="scene6-host" class="clip" data-composition-id="scene6" data-composition-src="compositions/scene6.html" data-start="28.35" data-duration="8.35"></div>
+    <div id="scene7-host" class="clip" data-composition-id="scene7" data-composition-src="compositions/scene7.html" data-start="36.70" data-duration="7.30"></div>
+    <div id="scene8-host" class="clip" data-composition-id="scene8" data-composition-src="compositions/scene8.html" data-start="44.00" data-duration="7.00"></div>
+
+    <!-- Editorial Overlay -->
+    <div id="editorialOverlay"></div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = gsap.timeline({ paused: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 4 — The Key Matrix</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #3E87A8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .photo-card {
+    position: absolute;
+    width: 920px;
+    height: 880px;
+    top: 340px;
+    left: 80px;
+    background: #FFF;
+    padding: 16px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+    overflow: hidden;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    filter: brightness(0.65) contrast(1.2);
+  }
+
+  .matrix-grid-overlay {
+    position: absolute;
+    inset: 24px;
+    border: 3px solid #66CFFF;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    pointer-events: none;
+    z-index: 14;
+    background: rgba(10, 25, 45, 0.45);
+  }
+  .matrix-cell {
+    border: 1px solid rgba(102, 207, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .matrix-cell.active {
+    background: #FFE619;
+    color: #1A1A1A;
+    font-weight: 900;
+    font-size: 24px;
+    box-shadow: inset 0 0 16px rgba(0,0,0,0.3);
+  }
+
+  .source-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(26,26,26,0.85);
+    color: #EEE;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    z-index: 16;
+  }
+
+  .editorial-pill {
+    position: absolute;
+    top: 1240px;
+    left: 150px;
+    background: #66CFFF;
+    color: #1A1A1A;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(102,207,255,0.3);
+    z-index: 25;
+  }
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 30px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene4" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">THE ELEGANT SOLUTION</div>
+    <div class="headline-main">THE KEY <span class="headline-yellow">MATRIX</span></div>
+  </div>
+
+  <div class="photo-card" id="card">
+    <img src="../assets/images/real_matrix_pcb.jpg" alt="PCB matrix traces">
+    <div class="matrix-grid-overlay" id="gridOverlay">
+      <div class="matrix-cell">R1</div><div class="matrix-cell">C1</div><div class="matrix-cell">C2</div><div class="matrix-cell">C3</div><div class="matrix-cell">C4</div><div class="matrix-cell">C5</div>
+      <div class="matrix-cell">R2</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div>
+      <div class="matrix-cell">R3</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell active" id="cellA">[A]</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div>
+      <div class="matrix-cell">R4</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div>
+      <div class="matrix-cell">R5</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div>
+      <div class="matrix-cell">R6</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div><div class="matrix-cell">·</div>
+    </div>
+    <span class="source-tag">COMMONS / KEYBOARD PCB MATRIX</span>
+  </div>
+
+  <div class="editorial-pill" id="pill">
+    <span>📊 6 ROWS × 16 COLS = 96 KEYS (ONLY 22 PINS)</span>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "Instead, keyboards use a grid of crossing rows and columns called a <span class="hl">key matrix</span>."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene4"] = tl;
+
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
+  tl.fromTo("#card", { scale: 0.92, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.2);
+  tl.fromTo("#gridOverlay", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.in" }, 0.5);
+
+  // Pulse the active matrix cell [A] at R3, C3 (~3.5s)
+  tl.fromTo("#cellA", 
+    { scale: 0.8 }, 
+    { scale: 1.25, repeat: 3, yoyo: true, duration: 0.4, ease: "power2.inOut" }, 3.0
+  );
+  tl.fromTo("#pill", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.4)" }, 3.8);
+
+  // Technique: Seam velocity match leading into Beat 5 (camera pushes into active key cell)
+  tl.to("#card", { scale: 1.15, transformOrigin: "55% 45%", duration: 2.0, ease: "power2.in" }, 3.6);
+</script>
+</body>
+</html>

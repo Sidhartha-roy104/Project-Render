@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scene 3 — The Tangled Mess</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Black';
+    src: url('../assets/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html, #root {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #FBFAF8;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  #root {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+  }
+  .paper-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .headline-wrap {
+    position: absolute;
+    top: 140px;
+    left: 70px;
+    right: 70px;
+    z-index: 20;
+  }
+  .headline-tag {
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #E53E3E;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .headline-main {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    color: #1A1A1A;
+    text-transform: uppercase;
+  }
+  .headline-yellow {
+    background: #FFE619;
+    padding: 0 12px;
+    display: inline-block;
+  }
+
+  .tape-banner {
+    position: absolute;
+    top: 310px;
+    left: 60px;
+    background: #FFE619;
+    color: #1A1A1A;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    padding: 12px 28px;
+    transform: rotate(-2.5deg);
+    z-index: 30;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .photo-card {
+    position: absolute;
+    width: 880px;
+    height: 840px;
+    top: 350px;
+    left: 100px;
+    background: #FFF;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.16);
+    border: 2px solid #EBEBEB;
+    z-index: 10;
+  }
+  .photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .illustrative-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(26,26,26,0.85);
+    color: #FFF;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    z-index: 15;
+  }
+
+  .editorial-pill {
+    position: absolute;
+    top: 1210px;
+    left: 140px;
+    background: #E53E3E;
+    color: #FFF;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: 0 8px 24px rgba(229,62,62,0.3);
+    z-index: 25;
+  }
+  .caption-rail {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    right: 60px;
+    background: rgba(26, 26, 26, 0.95);
+    color: #FFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    font-size: 30px;
+    line-height: 1.45;
+    z-index: 50;
+    font-weight: 600;
+  }
+  .caption-rail .hl {
+    background: #FFE619;
+    color: #1A1A1A;
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+</style>
+<script src="../assets/js/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="scene3" data-width="1080" data-height="1920">
+  <div class="paper-grid"></div>
+
+  <div class="headline-wrap" id="headline">
+    <div class="headline-tag">THE ENGINEERING PROBLEM</div>
+    <div class="headline-main">THE <span class="headline-yellow">TANGLED</span> MESS</div>
+  </div>
+
+  <div class="tape-banner" id="tape">
+    100 KEYS × 2 WIRES = 200 TRACES
+  </div>
+
+  <div class="photo-card" id="card">
+    <span class="illustrative-tag">[ILLUSTRATIVE]</span>
+    <img src="../assets/images/shot3_tangled_wires.jpg" alt="Chaotic tangled wires">
+  </div>
+
+  <div class="editorial-pill" id="pill">
+    <span>⚠️ 1-TO-1 WIRING = IMPOSSIBLE TO SCALE</span>
+  </div>
+
+  <div class="caption-rail" id="caption">
+    "But wiring a hundred keys individually would create a <span class="hl">tangled mess</span>."
+  </div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines["scene3"] = tl;
+
+  tl.fromTo("#headline", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power2.out" }, 0.1);
+  tl.fromTo("#card", { scale: 0.9, rotation: -3, opacity: 0 }, { scale: 1.0, rotation: 1.5, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.2);
+  tl.fromTo("#tape", { scale: 0.7, opacity: 0 }, { scale: 1.0, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }, 0.45);
+  tl.fromTo("#pill", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 0.7);
+
+  // Slow continuous zoom into the wire tangle
+  tl.to("#card", { scale: 1.08, duration: 3.5, ease: "none" }, 0.85);
+</script>
+</body>
+</html>
